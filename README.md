@@ -22,6 +22,8 @@ The images in this blog are from [Unsplash](https://unsplash.com/), gifs from [G
 
 Thanks for the free resources 🙏
 
+**This blog have a legacy version built with Gatsby which can be found [here](https://chaosflutter.vercel.app/)** 
+
 ---
 
 Copyright (c) 2023 ZHENG CHAO - Alrights reserved.
