@@ -13,7 +13,7 @@ import Umami from '~/icons/umami.svg'
 import Vercel from '~/icons/vercel.svg'
 import Railway from '~/icons/railway.svg'
 
-export let DevIconsMap = {
+export const DevIconsMap = {
   React,
   Git,
   Javascript,
@@ -30,11 +30,14 @@ export let DevIconsMap = {
   Railway,
 }
 
-export function DevIcon(props: { type: keyof typeof DevIconsMap; className?: string }) {
-  let { type, className } = props
-  let Icon = DevIconsMap[type]
+export function DevIcon(props: {
+  type: keyof typeof DevIconsMap
+  className?: string
+}) {
+  const { type, className } = props
+  const Icon = DevIconsMap[type]
   if (!Icon) return <div>Missing icon</div>
 
-  let defaultClass = 'h-16 w-16 lg:h-14 lg:w-14 xl:h-24 xl:w-24'
+  const defaultClass = 'h-16 w-16 lg:h-14 lg:w-14 xl:h-24 xl:w-24'
   return <Icon className={className || defaultClass} fill="currentColor" />
 }

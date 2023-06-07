@@ -2,18 +2,19 @@ import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
 export function ThemeSwitcher() {
-  let [mounted, setMounted] = useState(false)
-  let { theme, setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
-  let isDark = theme === 'dark' || resolvedTheme === 'dark'
+
+  const isDark = theme === 'dark' || resolvedTheme === 'dark'
 
   return (
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="umami--click--nav-theme-switcher ml-1 rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
+      className="ml-1 rounded p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 sm:ml-2"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
       <svg

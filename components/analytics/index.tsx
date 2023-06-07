@@ -3,12 +3,12 @@ import { GAScript } from './GoogleAnalytics'
 import { SimpleAnalyticsScript } from './SimpleAnalytics'
 import { UmamiScript } from './Umami'
 
-let isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production'
 
 export function Analytics() {
   if (isProduction) {
-    let { analytics } = siteMetadata
-    let { simpleAnalytics, umamiWebsiteId, googleAnalyticsId } = analytics
+    const { analytics } = siteMetadata
+    const { simpleAnalytics, umamiWebsiteId, googleAnalyticsId } = analytics
     return (
       <>
         {simpleAnalytics && <SimpleAnalyticsScript />}

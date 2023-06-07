@@ -3,11 +3,12 @@ import { fetcher } from '~/utils/fetcher'
 const { default: useSWR } = require('swr')
 
 export function SpotifyNowPlaying() {
-  let response = useSWR('/api/spotify', fetcher)
-  let { songUrl, title, artist } = (response.data as SpotifyNowPlayingData) || {}
+  const response = useSWR('/api/spotify', fetcher)
+  const { songUrl, title, artist } =
+    (response.data as SpotifyNowPlayingData) || {}
 
   return (
-    <div className="flex items-center bg-gray-800 px-3 py-2 xl:px-6">
+    <div className="hidden flex items-center bg-gray-800 px-3 py-2 xl:px-6">
       <svg
         className="h-5.5 w-5.5 flex-shrink-0 text-spotify"
         role="img"
@@ -42,7 +43,9 @@ export function SpotifyNowPlaying() {
           <p className="font-medium text-gray-200">Not Playing</p>
         )}
         <span className="mx-2 text-gray-300">{' – '}</span>
-        <p className="max-w-max truncate text-gray-300">{artist || 'Spotify'}</p>
+        <p className="max-w-max truncate text-gray-300">
+          {artist || 'Spotify'}
+        </p>
       </div>
     </div>
   )

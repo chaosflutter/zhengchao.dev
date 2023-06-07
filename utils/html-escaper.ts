@@ -1,17 +1,17 @@
-let { replace } = ''
+const { replace } = ''
 
 // escape
 // let es = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34);/g
-let ca = /[&<>'"]/g
+const ca = /[&<>'"]/g
 
-let esca = {
+const esca = {
   '&': '&amp;',
   '<': '&lt;',
   '>': '&gt;',
   "'": '&#39;',
   '"': '&quot;',
 }
-let pe = (m: string): string => esca[m]
+const pe = (m: string): string => esca[m]
 
 /**
  * Safely escape HTML entities such as `&`, `<`, `>`, `"`, and `'`.

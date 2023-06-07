@@ -2,9 +2,12 @@
 import NextLink from 'next/link'
 import type { AnchorHTMLAttributes } from 'react'
 
-export function Link({ href, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  let isInternalLink = href && href.startsWith('/')
-  let isAnchorLink = href && href.startsWith('#')
+export function Link({
+  href,
+  ...rest
+}: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const isInternalLink = href && href.startsWith('/')
+  const isAnchorLink = href && href.startsWith('#')
 
   if (isInternalLink) {
     return <NextLink href={href} {...rest} />

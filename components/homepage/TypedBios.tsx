@@ -1,68 +1,51 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import Typed from 'typed.js'
 import { Twemoji } from '../Twemoji'
 
 export function TypedBios() {
-  let el = React.useRef(null)
-  let typed = React.useRef(null)
+  const el = useRef(null)
+  const typed = useRef(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     typed.current = new Typed(el.current, {
       stringsElement: '#bios',
       typeSpeed: 40,
       backSpeed: 10,
-      loop: true,
+      loop: false,
       backDelay: 1000,
     })
     return () => typed.current.destroy()
   }, [])
 
   return (
-    <div>
+    <div className="-mt-1">
       <ul id="bios" className="hidden">
         <li>
-          I'm aliased as <b className="font-medium">Leo</b> at work.
-        </li>
-        <li>I'm a learner, builder, and freedom seeker.</li>
-        <li>
-          I live in <b className="font-medium">Ha Noi, Viet Nam</b>.
-        </li>
-        <li>
-          I was born in the beautiful <b className="font-medium">Moc Chau</b> plateau.
-        </li>
-        <li>
-          My first programming language I learned was <b className="font-medium">Pascal</b>.
-        </li>
-        <li>I love web development.</li>
-        <li>I'm focusing on building eCommerce software.</li>
-        <li>I work mostly with JS/TS technologies.</li>
-        <li>I'm Tu Le's husband.</li>
-        <li>
-          I'm a dog-person <Twemoji emoji="dog" />.
-        </li>
-        <li>
-          I'm a sport-guy. I love
-          <span className="ml-1">
-            <Twemoji emoji="soccer-ball" />,
-            <Twemoji emoji="man-swimming" />,
-            <Twemoji emoji="ping-pong" />,
-            <Twemoji emoji="volleyball" />
+          I'm a <Twemoji emoji="man-technologist" /> software engineer, living
+          in <Twemoji emoji="flag-china" /> China. I'm enthusiastic about coding
+          and writing. I have been developing web applications with JavaScript,
+          TypeScript, React, Vue, Node.js, and more since 2014.
+          <br />
+          <br />
+          Also, I'm a fan of <Twemoji emoji="video-game" /> video game, and "The
+          Legend of Zelda" is my favorite. Recently I decided to become a game
+          developer. So I work hard to be suffficent in this field. I have
+          learned C#, Unity, game mechanics and many other necessary knowledge.
+          <br />
+          <br />
+          If you have the idea to hire me, you can contact me through the social
+          media account on the left. Enjoy reading!
+          <Twemoji emoji="clinking-beer-mugs" />
+          <span className="hidden">
+            And I'm working on the famous game 'GenShin Impact' now. It's a
+            amazing experience.
           </span>
-          .
-        </li>
-        <li>I love watching football.</li>
-        <li>
-          I love playing <Twemoji emoji="musical-keyboard" /> & <Twemoji emoji="guitar" />.
-        </li>
-        <li>I love rock music.</li>
-        <li>
-          I love playing chess <Twemoji emoji="chess-pawn" />.
-        </li>
-        <li>
-          I love playing video game <Twemoji emoji="video-game" />, PES is my favorite one.
         </li>
       </ul>
-      <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
+      <span
+        ref={el}
+        className="text-neutral-900 dark:text-neutral-200 tracking-tight"
+      />
     </div>
   )
 }

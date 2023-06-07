@@ -1,20 +1,28 @@
 import { useTheme } from 'next-themes'
-import React, { useState, useEffect, useCallback, KeyboardEvent as ReactKeyboardEvent } from 'react'
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  KeyboardEvent as ReactKeyboardEvent,
+} from 'react'
 import type { ImageLightBoxProps } from '~/types'
 import { Twemoji } from './Twemoji'
 
 export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
-  let { theme } = useTheme()
-  let [imgLoaded, setImgLoaded] = useState(false)
-  let [close, setClose] = useState(false)
+  const { theme } = useTheme()
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [close, setClose] = useState(false)
 
-  let handleClose = useCallback(() => {
+  const handleClose = useCallback(() => {
     setClose(true)
-    document.documentElement.classList.remove('prevent-scroll', 'lightbox-loading')
+    document.documentElement.classList.remove(
+      'prevent-scroll',
+      'lightbox-loading'
+    )
     setTimeout(() => closeLightbox(), 300)
   }, [closeLightbox])
 
-  let handleKeydown = useCallback(
+  const handleKeydown = useCallback(
     (e: ReactKeyboardEvent | KeyboardEvent) => {
       if (e.key === 'Escape') handleClose()
     },
@@ -35,7 +43,7 @@ export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
     }
   }, [imgLoaded])
 
-  let style = {
+  const style = {
     '--tw-bg-opacity': theme === 'dark' ? 0.7 : 0.8,
     opacity: !close && imgLoaded ? 1 : 0,
   } as React.CSSProperties
@@ -51,10 +59,10 @@ export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
     >
       <div className="relative flex h-full w-full items-center justify-center">
         <div className="absolute inset-x-0 top-0 flex justify-between">
-          <button className="p-4 text-xl text-white" onClick={handleClose}>
+          <button className="p-4 text-lg text-white" onClick={handleClose}>
             Esc
           </button>
-          <button className="p-4" onClick={handleClose}>
+          <button className="hidden p-4" onClick={handleClose}>
             <Twemoji emoji="cross-mark" />
           </button>
         </div>
@@ -62,7 +70,7 @@ export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
         <img
           src={src.toString()}
           onLoad={() => setImgLoaded(true)}
-          className="umami--load--view-image-in-lightbox max-h-[80vh] max-w-[90vw] cursor-zoom-out"
+          className="max-h-[80vh] max-w-[90vw] cursor-zoom-out"
           alt="Lightbox"
         />
       </div>

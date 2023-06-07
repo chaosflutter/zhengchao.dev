@@ -11,25 +11,31 @@ export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
     blurDataURL = BLUR_IMAGE_DATA_URL
   }
 
-  let [openLightbox, setOpenLightbox] = useState(false)
-  let handleOpenLightbox = () => {
+  const [openLightbox, setOpenLightbox] = useState(false)
+  const handleOpenLightbox = () => {
     if (!shouldOpenLightbox) return
     document.documentElement.classList.add('lightbox-loading')
     setOpenLightbox(true)
   }
-  let className = clsx(
-    `flex justify-center`,
-    shouldOpenLightbox && 'cursor-zoom-in',
-    rest.id === 'thumbnail-image' && 'thumbnail-image umami--click--view-post-thumbnail'
+  const className = clsx(
+    `flex justify-center max-w-full`,
+    shouldOpenLightbox && 'cursor-zoom-in'
   )
 
   return (
     <>
       <div className={className}>
-        <NextImage {...rest} blurDataURL={blurDataURL} onClick={handleOpenLightbox} />
+        <NextImage
+          {...rest}
+          blurDataURL={blurDataURL}
+          onClick={handleOpenLightbox}
+        />
       </div>
       {openLightbox && (
-        <ImageLightbox closeLightbox={() => setOpenLightbox(false)} src={rest.src} />
+        <ImageLightbox
+          closeLightbox={() => setOpenLightbox(false)}
+          src={rest.src}
+        />
       )}
     </>
   )

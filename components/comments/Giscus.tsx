@@ -4,15 +4,15 @@ import { GISCUS_COMMENTS_ID } from '~/constant'
 import type { GiscusProps } from '~/types'
 
 function Giscus({ config }: GiscusProps) {
-  let { theme, resolvedTheme } = useTheme()
-  let { themeURL, darkTheme, lightTheme } = config
+  const { theme, resolvedTheme } = useTheme()
+  const { themeURL, darkTheme, lightTheme } = config
 
   useEffect(() => {
-    let isDark = theme === 'dark' || resolvedTheme === 'dark'
+    const isDark = theme === 'dark' || resolvedTheme === 'dark'
     let giscusTheme = isDark ? darkTheme : lightTheme
     if (themeURL) giscusTheme = themeURL
 
-    let script = document.createElement('script')
+    const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
     script.setAttribute('data-repo', config.repo)
     script.setAttribute('data-repo-id', config.repositoryId)
@@ -22,10 +22,11 @@ function Giscus({ config }: GiscusProps) {
     script.setAttribute('data-reactions-enabled', config.reactions)
     script.setAttribute('data-emit-metadata', config.metadata)
     script.setAttribute('data-theme', giscusTheme)
+    script.setAttribute('data-reactions-enabled', config.reactions)
     script.setAttribute('crossOrigin', 'anonymous')
     script.async = true
 
-    let commentsNode = document.getElementById(GISCUS_COMMENTS_ID)
+    const commentsNode = document.getElementById(GISCUS_COMMENTS_ID)
     if (commentsNode) commentsNode.appendChild(script)
 
     return () => {

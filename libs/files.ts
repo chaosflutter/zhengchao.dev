@@ -6,7 +6,10 @@ function pipe(...fns: Function[]) {
 }
 
 function flattenArray(input: any[]) {
-  return input.reduce((acc, item) => [...acc, ...(Array.isArray(item) ? item : [item])], [])
+  return input.reduce(
+    (acc, item) => [...acc, ...(Array.isArray(item) ? item : [item])],
+    []
+  )
 }
 
 function map(fn: any) {
@@ -14,7 +17,9 @@ function map(fn: any) {
 }
 
 function walkDir(fullPath: string) {
-  return fs.statSync(fullPath).isFile() ? fullPath : getAllFilesRecursively(fullPath)
+  return fs.statSync(fullPath).isFile()
+    ? fullPath
+    : getAllFilesRecursively(fullPath)
 }
 
 function pathJoinPrefix(prefix: string) {
@@ -22,7 +27,11 @@ function pathJoinPrefix(prefix: string) {
 }
 
 export function getAllFilesRecursively(folder: string): string[] {
-  return pipe(fs.readdirSync, map(pipe(pathJoinPrefix(folder), walkDir)), flattenArray)(folder)
+  return pipe(
+    fs.readdirSync,
+    map(pipe(pathJoinPrefix(folder), walkDir)),
+    flattenArray
+  )(folder)
 }
 
 export function formatSlug(slug: string) {
@@ -30,9 +39,11 @@ export function formatSlug(slug: string) {
 }
 
 export function getFiles(type: string): string[] {
-  let root = process.cwd()
-  let prefixPaths = path.join(root, 'data', type)
-  let files = getAllFilesRecursively(prefixPaths)
+  const root = process.cwd()
+  const prefixPaths = path.join(root, 'data', type)
+  const files = getAllFilesRecursively(prefixPaths)
   // Only want to return blog/path and ignore root, replace is needed to work on Windows
-  return files.map((file) => file.slice(prefixPaths.length + 1).replace(/\\/g, '/'))
+  return files.map((file) =>
+    file.slice(prefixPaths.length + 1).replace(/\\/g, '/')
+  )
 }

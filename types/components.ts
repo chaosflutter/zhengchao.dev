@@ -62,6 +62,7 @@ export interface BlogMetaProps {
   date: string
   slug: string
   readingTime: ReadingTime
+  tags: string[]
 }
 
 export interface CommentsProps {

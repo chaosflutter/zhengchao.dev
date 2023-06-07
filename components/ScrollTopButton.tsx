@@ -6,7 +6,7 @@ export function ScrollTopButton() {
 
   useEffect(() => {
     smoothscroll.polyfill()
-    let handleWindowScroll = () => {
+    const handleWindowScroll = () => {
       if (window.scrollY > 200) setShow(true)
       else setShow(false)
     }
@@ -15,7 +15,7 @@ export function ScrollTopButton() {
     return () => window.removeEventListener('scroll', handleWindowScroll)
   }, [])
 
-  let handleClick = () => {
+  const handleClick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
