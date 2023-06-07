@@ -6,7 +6,15 @@ module.exports = withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   eslint: {
-    dirs: ['components', 'constant', 'layouts', 'libs', 'pages', 'scripts', 'utils'],
+    dirs: [
+      'components',
+      'constant',
+      'layouts',
+      'libs',
+      'pages',
+      'scripts',
+      'utils',
+    ],
   },
   images: {
     domains: ['i.scdn.co'],

@@ -13,7 +13,10 @@ import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/responsive-image.jpg)
 
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/TMa0l7fdSW8" author="Dang Cong" />
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/TMa0l7fdSW8"
+  author="Dang Cong"
+/>
 
 ## Introduction
 
@@ -100,31 +103,31 @@ Take a look at the example above, let's say we are on a mobile phone with a scre
 ## Beyond the basics
 
 - For the `sizes` attribute, you can use `vw` instead of `px` to define the size.
-	This is useful when you want to use the viewport width as the size.
-	For example, if you want to use the viewport width as the size, you can use `100vw` as the size.
+  This is useful when you want to use the viewport width as the size.
+  For example, if you want to use the viewport width as the size, you can use `100vw` as the size.
 
 - Combine `srcset` & `sizes` with `loading="lazy"` to improve performance.
-	When the `loading` attribute is set to `lazy`, the browser will not load the image until it is visible in the viewport.
-	This is useful when you have a lot of images on the page and you want to improve the page's performance.
+  When the `loading` attribute is set to `lazy`, the browser will not load the image until it is visible in the viewport.
+  This is useful when you have a lot of images on the page and you want to improve the page's performance.
 
 - Better add `width` and `height` attributes to the `img` element.
-	When the `width` and `height` attributes are added to the `img` element, the browser will reserve the space for the image before it is loaded.
-	This is useful to prevent layout shifts and improve the experience to your visitors.
+  When the `width` and `height` attributes are added to the `img` element, the browser will reserve the space for the image before it is loaded.
+  This is useful to prevent layout shifts and improve the experience to your visitors.
 
 - And don't forget to add a fallback image with the `src` attribute.
-	When the browser doesn't support the `srcset` and `sizes` attributes, it will use the image source defined in the `src` attribute.
+  When the browser doesn't support the `srcset` and `sizes` attributes, it will use the image source defined in the `src` attribute.
 
 At the end, the `img` element should look like this:
 
 ```html
 <img
-	src="image.jpg"
-	srcset="image-320.jpg 320w, image-640.jpg 640w, image-1280.jpg 1280w"
-	sizes="(max-width: 320px) 280px, (max-width: 640px) 640px, 1280px"
-	loading="lazy"
-	alt="image alt text"
-	width="1280"
-	height="720"
+  src="image.jpg"
+  srcset="image-320.jpg 320w, image-640.jpg 640w, image-1280.jpg 1280w"
+  sizes="(max-width: 320px) 280px, (max-width: 640px) 640px, 1280px"
+  loading="lazy"
+  alt="image alt text"
+  width="1280"
+  height="720"
 />
 ```
 

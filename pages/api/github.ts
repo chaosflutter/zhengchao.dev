@@ -1,14 +1,23 @@
-import { graphql, GraphQlQueryResponseData, GraphqlResponseError } from '@octokit/graphql'
+import {
+  graphql,
+  GraphQlQueryResponseData,
+  GraphqlResponseError,
+} from '@octokit/graphql'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { siteMetadata } from '~/data/siteMetadata'
 
-export default async function fetchGithubRepo(req: NextApiRequest, res: NextApiResponse) {
+export default async function fetchGithubRepo(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   let { repo } = req.query
   if (!repo) {
     return res.status(400).json({ message: 'Missing repo query param' })
   }
   if (!process.env.GITHUB_API_TOKEN) {
-    return res.status(500).json({ message: 'Missing `GITHUB_API_TOKEN` env variable' })
+    return res
+      .status(500)
+      .json({ message: 'Missing `GITHUB_API_TOKEN` env variable' })
   }
   try {
     let { repository }: GraphQlQueryResponseData = await graphql(
@@ -64,7 +73,9 @@ export default async function fetchGithubRepo(req: NextApiRequest, res: NextApiR
     if (error instanceof GraphqlResponseError) {
       return res.status(500).json({ message: error.errors[0].message })
     } else {
-      return res.status(500).json({ message: 'Unable to fetch repo data' + error?.toString() })
+      return res
+        .status(500)
+        .json({ message: 'Unable to fetch repo data' + error?.toString() })
     }
   }
 }

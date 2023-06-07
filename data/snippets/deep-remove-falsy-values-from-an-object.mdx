@@ -17,22 +17,31 @@ Allow passing custom `falsyValues` to remove and return a new object without the
 <Twemoji emoji="guard" /> if you prefer `typescript`:
 
 ```typescript
-export function removeFalsy<T = any>(obj: {}, falsyValues: any[] = ['', null, undefined]): T {
+export function removeFalsy<T = any>(
+  obj: {},
+  falsyValues: any[] = ['', null, undefined]
+): T {
   if (!obj || typeof obj !== 'object') {
     return obj as any
   }
   return Object.entries(obj).reduce((a, c) => {
     let [k, v]: [string, any] = c
-    if (falsyValues.indexOf(v) === -1 && JSON.stringify(removeFalsy(v, falsyValues)) !== '{}') {
-      a[k] = typeof v === 'object' && !Array.isArray(v) ? removeFalsy(v, falsyValues) : v
+    if (
+      falsyValues.indexOf(v) === -1 &&
+      JSON.stringify(removeFalsy(v, falsyValues)) !== '{}'
+    ) {
+      a[k] =
+        typeof v === 'object' && !Array.isArray(v)
+          ? removeFalsy(v, falsyValues)
+          : v
     }
     return a
   }, {} as any) as T
 }
 ```
 
-<Twemoji emoji="man-shrugging" /> and a version for plain `javascript` if you don't like too much `as`
-and `any`:
+<Twemoji emoji="man-shrugging" /> and a version for plain `javascript` if you don't
+like too much `as` and `any`:
 
 ```javascript
 function removeFalsy(obj, falsyValues = ['', null, undefined]) {
@@ -41,8 +50,14 @@ function removeFalsy(obj, falsyValues = ['', null, undefined]) {
   }
   return Object.entries(obj).reduce((a, c) => {
     let [k, v] = c
-    if (falsyValues.indexOf(v) === -1 && JSON.stringify(removeFalsy(v, falsyValues)) !== '{}') {
-      a[k] = typeof v === 'object' && !Array.isArray(v) ? removeFalsy(v, falsyValues) : v
+    if (
+      falsyValues.indexOf(v) === -1 &&
+      JSON.stringify(removeFalsy(v, falsyValues)) !== '{}'
+    ) {
+      a[k] =
+        typeof v === 'object' && !Array.isArray(v)
+          ? removeFalsy(v, falsyValues)
+          : v
     }
     return a
   }, {})

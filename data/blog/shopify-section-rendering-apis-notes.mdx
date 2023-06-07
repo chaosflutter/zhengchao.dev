@@ -13,7 +13,10 @@ import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/shopify-section-render.jpg)
 
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/atSUvc1hMwk" author="Nattu Adnan" />
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/atSUvc1hMwk"
+  author="Nattu Adnan"
+/>
 
 **Section Rendering APIs** is a powerful **AJAX API** from Shopify that can be used on the storefront to request **HTML** for any section of your choosing.
 The biggest advantage of this API is that it allows you to update page content without having to reload the page.
@@ -44,6 +47,7 @@ The result will look like this:
   "footer": "<div id=\"shopify-section-footer\" class=\"shopify-section\">\n<!-- section content -->\n</div>"
 }
 ```
+
 You can combine this with the **AJAX Cart APIs** by adding the `sections` parameter to the request body:
 
 ```javascript
@@ -117,11 +121,15 @@ Example:
 ```javascript
 // Async context
 
-let collectionMarkup = await (await fetch(`/collections/fashion/xs?section_id=template--15128665981118__main`).text())
+let collectionMarkup = await await fetch(
+  `/collections/fashion/xs?section_id=template--15128665981118__main`
+).text()
 console.log(collectionMarkup)
 // Example markup: '<div id=\"shopify-section-template--15128665981118__main\">\n<!-- section content -->\n</div>''
 
-let productMarkup = await (await fetch(`/products/adidas-classic-backpack?section_id=product-json`).text())
+let productMarkup = await await fetch(
+  `/products/adidas-classic-backpack?section_id=product-json`
+).text()
 console.log(productMarkup)
 // Example markup: '<div id=\"shopify-section-template--15128665981118__main\">\n<!-- section content -->\n</div>''
 ```

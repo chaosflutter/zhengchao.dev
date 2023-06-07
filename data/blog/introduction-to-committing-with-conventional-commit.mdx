@@ -1,18 +1,22 @@
 ---
-title: "Introduction to Committing with Conventional Commit"
-date: "2023-01-01"
+title: 'Introduction to Committing with Conventional Commit'
+date: '2023-01-01'
 tags: ['commit', 'git', 'conventional-commit']
 draft: false
-summary: "Conventional commit is a specific form of committing which gives software developers a uniform system for organizing and describing their changes, making it easier to keep track of updates"
-images: ["/static/images/commit.jpg"]
-authors: ["default"]
+summary: 'Conventional commit is a specific form of committing which gives software developers a uniform system for organizing and describing their changes, making it easier to keep track of updates'
+images: ['/static/images/commit.jpg']
+authors: ['default']
 ---
 
 import Twemoji from './Twemoji.tsx'
 import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/commit.jpg)
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/wbXdGS_D17U" author="Ilya Pavlov" />
+
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/wbXdGS_D17U"
+  author="Ilya Pavlov"
+/>
 
 ## Introduction
 
@@ -104,7 +108,9 @@ husky - Git hooks installed
 
 and a new `.husky` folder should be created in the root of your project.
 
-<Twemoji emoji="light-bulb" /> I would highly recommend adding a `postinstall` script in the **package.json** file to automatically install husky hooks after installing dependencies:
+<Twemoji emoji="light-bulb" /> I would highly recommend adding a `postinstall` script
+in the **package.json** file to automatically install husky hooks after installing
+dependencies:
 
 ```json
 "scripts": {
@@ -123,7 +129,6 @@ You should see a `commit-msg` file created in the `.husky` folder.
 And that’s it <Twemoji emoji="party-popper" />! Now, whenever you commit, commitlint will check your commit message and make sure it follows the conventional commit format.
 
 Let’s try it out with an un-conventional commit message:
-
 
 ```bash
 $ git commit -m "Using commitlint and husky to lint commits"

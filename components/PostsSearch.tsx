@@ -1,4 +1,8 @@
-export function PostsSearch({ onChange }: { onChange: (value: string) => void }) {
+export function PostsSearch({
+  onChange,
+}: {
+  onChange: (value: string) => void
+}) {
   return (
     <div className="relative max-w-lg">
       <input

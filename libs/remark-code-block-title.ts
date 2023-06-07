@@ -18,7 +18,9 @@ export function remarkCodeBlockTitle() {
       let titleNode = {
         type: 'mdxJsxFlowElement',
         name: 'div',
-        attributes: [{ type: 'mdxJsxAttribute', name: 'className', value: className }],
+        attributes: [
+          { type: 'mdxJsxAttribute', name: 'className', value: className },
+        ],
         children: [{ type: 'text', value: title }],
         data: { _xdmExplicitJsx: true },
       }

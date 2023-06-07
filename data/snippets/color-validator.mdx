@@ -51,7 +51,10 @@ let isValidColor = (color) => {
   let otpNode = new Option()
   otpNode.style.color = color
 
-  return !!otpNode.style.color && !/(unset|initial|inherit|currentcolor|transparent)/i.test(color)
+  return (
+    !!otpNode.style.color &&
+    !/(unset|initial|inherit|currentcolor|transparent)/i.test(color)
+  )
 }
 
 isValidColor('rgb(-1, 255, 255)') // true

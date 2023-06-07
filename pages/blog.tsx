@@ -16,7 +16,11 @@ export function getStaticProps() {
   return { props: { posts, initialDisplayPosts, pagination } }
 }
 
-export default function Blog({ posts, initialDisplayPosts, pagination }: BlogListProps) {
+export default function Blog({
+  posts,
+  initialDisplayPosts,
+  pagination,
+}: BlogListProps) {
   return (
     <>
       <PageSeo

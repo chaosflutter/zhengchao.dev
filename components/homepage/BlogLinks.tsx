@@ -7,7 +7,9 @@ export function BlogLinks() {
     <div className="flex flex-col space-y-1.5">
       <Link href="/projects" className="hover:underline">
         <Twemoji emoji="hammer-and-wrench" />
-        <span className="umami--click--home-link-projects ml-1.5">What have I built?</span>
+        <span className="umami--click--home-link-projects ml-1.5">
+          What have I built?
+        </span>
       </Link>
       <Link href="/blog" className="hover:underline">
         <Twemoji emoji="memo" />
@@ -15,11 +17,15 @@ export function BlogLinks() {
       </Link>
       <Link href="/snippets" className="hover:underline">
         <Twemoji emoji="dna" />
-        <span className="umami--click--home-link-snippets ml-1.5">My snippets collection</span>
+        <span className="umami--click--home-link-snippets ml-1.5">
+          My snippets collection
+        </span>
       </Link>
       <Link href="/about" className="hover:underline">
         <Twemoji emoji="face-with-monocle" />
-        <span className="umami--click--home-link-about ml-1.5">More about me and myself</span>
+        <span className="umami--click--home-link-about ml-1.5">
+          More about me and myself
+        </span>
       </Link>
       <Link href="/resume" className="hover:underline">
         <Twemoji emoji="briefcase" />

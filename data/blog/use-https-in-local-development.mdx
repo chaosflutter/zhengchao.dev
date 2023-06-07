@@ -12,7 +12,11 @@ import Twemoji from './Twemoji.tsx'
 import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/secure.jpg)
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/ah-HeguOe9k" author="Dan Nelson" />
+
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/ah-HeguOe9k"
+  author="Dan Nelson"
+/>
 
 > When do we need **HTTPS** in **local**? <Twemoji emoji="thinking-face" />
 
@@ -52,7 +56,8 @@ $ openssl genrsa -des3 -out rootCA.key 2048
 
 You will be asked to enter a **pass phrase** to generate the key, just enter a random string and verify it.
 
-<Twemoji emoji="warning" /> Remember this **pass phrase** as you will need it in the next steps!
+<Twemoji emoji="warning" /> Remember this **pass phrase** as you will need it in
+the next steps!
 
 The generated key will be saved in `rootCA.key` file, use it to generate **Root SSL Certificate** with the following command:
 
@@ -74,7 +79,7 @@ Open the **Keychain Access** app (MacOS), select **Certificate** tab:
 
 ![keychain-access](/static/images/keychain-access.png)
 
-Import `rootCA.pem` by dragging in or navigating to  **File / Import items...**.
+Import `rootCA.pem` by dragging in or navigating to **File / Import items...**.
 
 Then **Right click / Get Info** (or **Double click**) on the imported certificate
 

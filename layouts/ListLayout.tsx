@@ -8,13 +8,16 @@ export function ListLayout(props: ListLayoutProps) {
   let { posts, title, initialDisplayPosts = [], pagination } = props
   let [searchValue, setSearchValue] = useState('')
   let filteredBlogPosts = posts.filter((frontMatter) => {
-    let searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+    let searchContent =
+      frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   let displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue
+      ? initialDisplayPosts
+      : filteredBlogPosts
 
   return (
     <>
@@ -24,8 +27,8 @@ export function ListLayout(props: ListLayoutProps) {
             {title}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            I write mostly about web development, tech related, and sometime about my personal life.
-            Use the search below to filter by title.
+            I write mostly about web development, tech related, and sometime
+            about my personal life. Use the search below to filter by title.
           </p>
           <PostsSearch onChange={setSearchValue} />
         </div>
@@ -37,7 +40,10 @@ export function ListLayout(props: ListLayoutProps) {
         </ul>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
+        <Pagination
+          currentPage={pagination.currentPage}
+          totalPages={pagination.totalPages}
+        />
       )}
     </>
   )

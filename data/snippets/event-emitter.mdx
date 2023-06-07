@@ -15,31 +15,31 @@ Simple Event Emitter or PubSub pattern <Twemoji emoji="owl" />
 ```javascript
 class Event {
   constructor() {
-    this.events = {};
+    this.events = {}
   }
 
   subscribe(event, handler) {
-    this.events[event] = this.events[event] || [];
-    this.events[event].push(handler);
+    this.events[event] = this.events[event] || []
+    this.events[event].push(handler)
     return () => this.unSubscribe(event, handler)
   }
 
   unSubscribe(event, handler) {
-    let handlers = this.events[event];
+    let handlers = this.events[event]
     if (handlers && Array.isArray(handlers)) {
       for (let i = 0; i < handlers.length; i++) {
         if (handlers[i] === handler) {
-          handlers.splice(i, 1);
-          break;
+          handlers.splice(i, 1)
+          break
         }
       }
     }
   }
 
   emit(event, ...args) {
-    (this.events[event] || []).forEach((handler) => {
-      handler(...args);
-    });
+    ;(this.events[event] || []).forEach((handler) => {
+      handler(...args)
+    })
   }
 }
 ```
@@ -50,8 +50,10 @@ Usage
 // Create a global instance in your app
 let globalEvent = new Event()
 
-let handler1 = data => console.log(`handler1(): FOO event emiited with data: ${data}`)
-let handler2 = data => console.log(`handler2(): FOO event emiited with data: ${data}`)
+let handler1 = (data) =>
+  console.log(`handler1(): FOO event emiited with data: ${data}`)
+let handler2 = (data) =>
+  console.log(`handler2(): FOO event emiited with data: ${data}`)
 
 // Subscribe to event
 globalEvent.subscribe('FOO', handler1)

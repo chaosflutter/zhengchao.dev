@@ -12,7 +12,11 @@ import Twemoji from './Twemoji.tsx'
 import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/git-notes.jpg)
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/842ofHC6MaI" author="Yancy Min" />
+
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/842ofHC6MaI"
+  author="Yancy Min"
+/>
 
 This post is written for developers who prefer working with `git` via `command-line` like me. If you love GUI, hope you still can find something useful here <Twemoji emoji="beaming face with smiling eyes" />
 
@@ -30,9 +34,11 @@ This post is written for developers who prefer working with `git` via `command-l
 $ git config --global alias.<shortcut> <original-command>
 ```
 
-<Twemoji emoji="warning" /> Use `--global` flag to tell **git** that the alias will be used in all projects (otherwise, it will only work on your current working project!)
+<Twemoji emoji="warning" /> Use `--global` flag to tell **git** that the alias will
+be used in all projects (otherwise, it will only work on your current working project!)
 
-<Twemoji emoji="warning" /> Use quotes (`''`) if the `original-command` includes space(s).
+<Twemoji emoji="warning" /> Use quotes (`''`) if the `original-command` includes
+space(s).
 
 For me, I create aliases for almost all commands that I work with daily.
 

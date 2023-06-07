@@ -19,7 +19,11 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }: { params: { slug: string[] } }) {
+export async function getStaticProps({
+  params,
+}: {
+  params: { slug: string[] }
+}) {
   let snippet = await getFileBySlug('snippets', params.slug.join('/'))
   let commentConfig = getCommentConfigs()
   return { props: { snippet, commentConfig } }

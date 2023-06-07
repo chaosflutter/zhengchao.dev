@@ -2,7 +2,11 @@ import type { AuthorFrontMatter } from '~/types'
 import { Link } from '../Link'
 import { Image } from '../Image'
 
-export function AuthorDetails({ authorDetails }: { authorDetails: AuthorFrontMatter[] }) {
+export function AuthorDetails({
+  authorDetails,
+}: {
+  authorDetails: AuthorFrontMatter[]
+}) {
   return (
     <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-6">
       {authorDetails.map((author) => (
@@ -26,7 +30,9 @@ export function Author({ author }: { author: AuthorFrontMatter }) {
       )}
       <dl className="whitespace-nowrap text-sm font-medium leading-5">
         <dt className="sr-only">Name</dt>
-        <dd className="mb-0.5 text-gray-900 dark:text-gray-100">{author.name}</dd>
+        <dd className="mb-0.5 text-gray-900 dark:text-gray-100">
+          {author.name}
+        </dd>
         <dt className="sr-only">Twitter</dt>
         <dd>
           {author.github && (

@@ -25,7 +25,9 @@ export function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { tag: string } }) {
   let allPosts = getAllFilesFrontMatter('blog')
   let filteredPosts = allPosts.filter(
-    (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
+    (post) =>
+      post.draft !== true &&
+      post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
 
   // rss
@@ -38,7 +40,13 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
   return { props: { posts: filteredPosts, tag: params.tag } }
 }
 
-export default function Tag({ posts, tag }: { posts: BlogFrontMatter[]; tag: string }) {
+export default function Tag({
+  posts,
+  tag,
+}: {
+  posts: BlogFrontMatter[]
+  tag: string
+}) {
   // Capitalize first letter and convert space to dash
   let title = tag[0] + tag.split(' ').join('-').slice(1)
   return (

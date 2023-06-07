@@ -1,7 +1,13 @@
 ---
 title: 'Eliminating Render Blocking CSS and measuring page rendering time with Performance API'
 date: '2023-03-11'
-tags: ['render-blocking-resources', 'render-blocking-css', 'perfomance', 'chrome-performance-api']
+tags:
+  [
+    'render-blocking-resources',
+    'render-blocking-css',
+    'perfomance',
+    'chrome-performance-api',
+  ]
 draft: false
 summary: "Learn how to improve your website's performance and enhance user experience by avoiding render blocking CSS. Using the Chrome Performance API to measure and optimize page rendering time."
 images: ['/static/images/performance.jpg']
@@ -12,7 +18,11 @@ import Twemoji from './Twemoji.tsx'
 import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/performance.jpg)
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/JKUTrJ4vK00" author="Luke Chesser" />
+
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/JKUTrJ4vK00"
+  author="Luke Chesser"
+/>
 
 **CSS** is considered by browsers as one of the **render-blocking resources** - resources that your page must load before users can see the content.
 
@@ -23,6 +33,7 @@ import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 - Each CSS file that your website loads adds to the **first-paint** time of the page, meaning users have to wait longer to see content if your page has to load a lot of **CSS**.
 
 ![render-blocking-css](/static/images/render-blocking-css.png)
+
 <div style={{ textAlign: 'center', marginTop: '-16px' }}>
   <small>CSS greatly affects page load time</small>
 </div>
@@ -80,9 +91,10 @@ One effective way is to directly place the CSS in a `style` tag in the document 
 Or you can limit the loading of too many CSS files. Usually when coding, developers tend to separate different CSS files by component, module, etc. for easy management. However, loading many CSS files takes longer than loading only one file.
 
 ![inline-css](/static/images/inline-css.png)
+
 <div style={{ textAlign: 'center', marginTop: '-16px' }}>
   <small>
-		One of the techniques to help Gatsby site load extremely fast is Inline CSS
+    One of the techniques to help Gatsby site load extremely fast is Inline CSS
   </small>
 </div>
 
@@ -123,6 +135,7 @@ if ('PerformanceObserver' in window) {
   console.log("Performance API isn't supported!")
 }
 ```
+
 There are many different [Performance metric](https://developer.mozilla.org/en-US/docs/Web/API/PerformanceEntry), and in this case, I used [PerformancePaintTiming](https://developer.mozilla.org/en-US/docs/Web/API/PerformancePaintTiming).
 
 To see the results more clearly, you can open **Chrome DevTools**, throttle the internet, and CPU speed to simulate the conditions of the user's device.

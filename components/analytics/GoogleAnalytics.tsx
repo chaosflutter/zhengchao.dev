@@ -23,7 +23,12 @@ export function GAScript() {
 }
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export function logEvent(action: string, category: string, label: string, value: string) {
+export function logEvent(
+  action: string,
+  category: string,
+  label: string,
+  value: string
+) {
   // @ts-ignore
   window.gtag?.('event', action, {
     event_category: category,

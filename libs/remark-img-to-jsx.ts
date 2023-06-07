@@ -10,7 +10,9 @@ export function remarkImgToJsx() {
       let hasImage = node.children.some((n) => n.type === 'image')
       if (!hasImage) return
 
-      let imageNode = node.children.find((n) => n.type === 'image') as UnistImageNode
+      let imageNode = node.children.find(
+        (n) => n.type === 'image'
+      ) as UnistImageNode
 
       // Convert original `image` to `next/image` for local files only
       let imageLocalPath = `${process.cwd()}/public${imageNode.url}`

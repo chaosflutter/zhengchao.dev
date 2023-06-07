@@ -13,7 +13,10 @@ import UnsplashPhotoInfo from './UnsplashPhotoInfo.tsx'
 
 ![thumbnail-image](/static/images/postman-sign.jpg)
 
-<UnsplashPhotoInfo photoURL="https://unsplash.com/photos/WOn90Iui_08" author="Mika Baumeister" />
+<UnsplashPhotoInfo
+  photoURL="https://unsplash.com/photos/WOn90Iui_08"
+  author="Mika Baumeister"
+/>
 
 If you are a Shopify Developer and need to migrate all of your data from one store to a new one without the need to pay for a migration app,
 then I believe this is the article you need to read <Twemoji emoji="smiling-face-with-sunglasses" />.
@@ -24,7 +27,8 @@ The problem has been stated above. So let's see what data we have in a store and
 
 - **Product**: You can download a **CSV** file containing product data and upload it to the new store.
 
-  <Twemoji emoji="warning" /> With **CSV** files, information about Collections will not be migrated, so you will need to recreate the Collection data.
+  <Twemoji emoji="warning" /> With **CSV** files, information about Collections will
+  not be migrated, so you will need to recreate the Collection data.
 
 - **Theme**: Download the Zip file and upload it to the new store, and the data will remain the same.
 
@@ -83,7 +87,9 @@ In which:
 
 - Request URL: <code style={{ wordBreak: 'break-word' }}>https://your-store.myshopify.com/admin/api/unstable/graphql.json</code> with `unstable` as the API version supporting File API.
 
-- <Twemoji emoji="warning" /> note: The `Content-Type` header must use the value `application/json`, not `application/graphql` (Shopify has [note](https://shopify.dev/apps/auth/basic-http#shopify-access-token) this)
+- <Twemoji emoji="warning" /> note: The `Content-Type` header must use the value
+  `application/json`, not `application/graphql` (Shopify has [note](https://shopify.dev/apps/auth/basic-http#shopify-access-token)
+  this)
 
 - The value of the `X-Shopify-Access-Token` header is the `access_token` or `password` of the **Private App** you just created.
 

@@ -9,7 +9,11 @@ export async function getStaticProps() {
   return { props: { snippets } }
 }
 
-export default function Snippet({ snippets }: { snippets: SnippetFrontMatter[] }) {
+export default function Snippet({
+  snippets,
+}: {
+  snippets: SnippetFrontMatter[]
+}) {
   let description = 'Reuseable code snippets collected by me'
   return (
     <>
