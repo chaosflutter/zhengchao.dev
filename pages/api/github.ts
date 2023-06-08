@@ -10,7 +10,7 @@ export default async function fetchGithubRepo(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  let { repo } = req.query
+  const { repo } = req.query
   if (!repo) {
     return res.status(400).json({ message: 'Missing repo query param' })
   }
@@ -20,7 +20,7 @@ export default async function fetchGithubRepo(
       .json({ message: 'Missing `GITHUB_API_TOKEN` env variable' })
   }
   try {
-    let { repository }: GraphQlQueryResponseData = await graphql(
+    const { repository }: GraphQlQueryResponseData = await graphql(
       `
         query repository($owner: String!, $repo: String!) {
           repository(owner: $owner, name: $repo) {

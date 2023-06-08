@@ -6,17 +6,15 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    let slug = req.query.slug.toString()
+    const slug = req.query.slug.toString()
     if (req.method === 'POST') {
-      let newOrUpdatedViews = await __db.views.upsert({
+      const newOrUpdatedViews = await __db.views.upsert({
         where: { slug },
         create: {
           slug,
         },
         update: {
-          count: {
-            increment: 1,
-          },
+          count: { increment: 1 },
         },
       })
       return res.status(200).json({
@@ -24,7 +22,7 @@ export default async function handler(
       })
     }
     if (req.method === 'GET') {
-      let views = await __db.views.findUnique({
+      const views = await __db.views.findUnique({
         where: {
           slug,
         },

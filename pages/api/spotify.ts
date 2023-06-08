@@ -6,12 +6,12 @@ export default async function fetchNowPlaying(
   _: NextApiRequest,
   res: NextApiResponse
 ) {
-  let response = await getNowPlaying()
+  const response = await getNowPlaying()
   if (response.status === 204 || response.status > 400) {
     return res.status(200).json({ isPlaying: false })
   }
 
-  let data = await response.json()
+  const data = await response.json()
   if (data?.currently_playing_type === 'episode') {
     return res.status(200).json({
       isPlaying: true,
@@ -19,7 +19,7 @@ export default async function fetchNowPlaying(
       songUrl: data.item.external_urls.spotify,
     })
   }
-  let songData: SpotifyNowPlayingData = {
+  const songData: SpotifyNowPlayingData = {
     isPlaying: data.is_playing,
     title: data.item.name,
     artist: data.item.artists

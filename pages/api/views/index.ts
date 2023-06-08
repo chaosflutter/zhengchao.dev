@@ -3,7 +3,7 @@ import { __db } from '~/libs/prisma'
 
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   try {
-    let totalViews = await __db.views.aggregate({
+    const totalViews = await __db.views.aggregate({
       _sum: {
         count: true,
       },
