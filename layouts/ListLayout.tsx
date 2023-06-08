@@ -5,16 +5,16 @@ import { PostsSearch } from '~/components/PostsSearch'
 import type { ListLayoutProps } from '~/types'
 
 export function ListLayout(props: ListLayoutProps) {
-  let { posts, title, initialDisplayPosts = [], pagination } = props
-  let [searchValue, setSearchValue] = useState('')
-  let filteredBlogPosts = posts.filter((frontMatter) => {
-    let searchContent =
+  const { posts, title, initialDisplayPosts = [], pagination } = props
+  const [searchValue, setSearchValue] = useState('')
+  const filteredBlogPosts = posts.filter((frontMatter) => {
+    const searchContent =
       frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
-  let displayPosts =
+  const displayPosts =
     initialDisplayPosts.length > 0 && !searchValue
       ? initialDisplayPosts
       : filteredBlogPosts

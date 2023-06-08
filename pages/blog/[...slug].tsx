@@ -48,7 +48,6 @@ export async function getStaticProps({
   // rss
   const rss = generateRss(allPosts)
   fs.writeFileSync('./public/feed.xml', rss)
-  // TODO: remove commentConfig
   const commentConfig = getCommentConfigs()
 
   return { props: { post, authorDetails, prev, next, page, commentConfig } }
