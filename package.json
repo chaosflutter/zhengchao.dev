@@ -49,6 +49,7 @@
     "@next/bundle-analyzer": "^13.2.3",
     "@svgr/webpack": "^6.5.1",
     "@types/react": "^18.0.28",
+    "@types/unist": "^2.0.6",
     "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
     "eslint": "^8.35.0",
