@@ -34,6 +34,9 @@ dependencies:
   isomorphic-unfetch:
     specifier: ^4.0.2
     version: 4.0.2
+  mdast-util-to-string:
+    specifier: ^3.2.0
+    version: 3.2.0
   mdx-bundler:
     specifier: ^9.2.1
     version: 9.2.1(esbuild@0.17.11)
