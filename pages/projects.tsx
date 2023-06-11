@@ -4,9 +4,9 @@ import { projectsData } from '~/data/projectsData'
 import { siteMetadata } from '~/data/siteMetadata'
 
 export default function Projects() {
-  let workProjects = projectsData.filter(({ type }) => type === 'work')
-  let sideProjects = projectsData.filter(({ type }) => type === 'self')
-  let description =
+  const workProjects = projectsData.filter(({ type }) => type === 'work')
+  const sideProjects = projectsData.filter(({ type }) => type === 'self')
+  const description =
     'My open-source side projects and stuff that I built with my colleagues at work'
 
   return (

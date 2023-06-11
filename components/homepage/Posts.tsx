@@ -1,15 +1,31 @@
+import { useState } from 'react'
+import { PostsSearch } from '~/components/PostsSearch'
 import type { BlogFrontMatter } from '~/types'
 import { formatDate } from '~/utils/date'
 import { Link } from '../Link'
 
 export function Posts({ posts }: { posts: BlogFrontMatter[] }) {
+  const [searchValue, setSearchValue] = useState('')
+  const filteredBlogPosts = posts.filter((frontMatter) => {
+    const searchContent =
+      frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  })
+
+  // If initialDisplayPosts exist, display it if no searchValue is specified
+  const displayPosts =
+    posts.length > 0 && !searchValue ? posts : filteredBlogPosts
+
   return (
     <div>
-      <h1 className="font-bold text-2xl mb-4">All Posts</h1>
+      <div className="flex justify-between">
+        <h1 className="font-bold text-2xl mb-4">Posts</h1>
+        <PostsSearch onChange={setSearchValue} />
+      </div>
       <ul className="border-t border-gray-200 dark:border-gray-700 divide-y divide-gray-200 dark:divide-gray-700">
-        {!posts.length && 'No posts found.'}
+        {!displayPosts.length && 'No posts found.'}
 
-        {posts.map((frontMatter) => {
+        {displayPosts.map((frontMatter) => {
           const { slug, date, title } = frontMatter
 
           return (

@@ -5,8 +5,8 @@ import { siteMetadata } from '~/data/siteMetadata'
 import type { AuthorLayoutProps } from '~/types'
 
 export function AuthorLayout({ children }: AuthorLayoutProps) {
-  let title = 'About'
-  let description = 'More about me and this blog'
+  const title = 'About'
+  const description = 'More about me and this blog'
 
   return (
     <>

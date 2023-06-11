@@ -3,7 +3,7 @@ import { DevIcon } from './DevIcon'
 import { Link } from './Link'
 
 export function SnippetCard({ snippet }: { snippet: SnippetFrontMatter }) {
-  let { type, heading, summary, title, slug } = snippet
+  const { type, heading, summary, title, slug } = snippet
 
   return (
     <Link href={`/snippets/${slug}`} title={title}>

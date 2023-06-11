@@ -11,9 +11,9 @@ import { siteMetadata } from '~/data/siteMetadata'
 import type { PostLayoutProps } from '~/types'
 
 export function PostLayout(props: PostLayoutProps) {
-  let { frontMatter, authorDetails, page, children, commentConfig } = props
-  let { slug, fileName, date, title, tags, readingTime } = frontMatter
-  let postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
+  const { frontMatter, authorDetails, page, children, commentConfig } = props
+  const { slug, fileName, date, title, tags, readingTime } = frontMatter
+  const postUrl = `${siteMetadata.siteUrl}/blog/${slug}`
 
   return (
     <SectionContainer>

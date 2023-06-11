@@ -4,6 +4,7 @@ import { PageTitle } from '~/components/PageTitle'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { SectionContainer } from '~/components/SectionContainer'
 import { BlogSeo } from '~/components/SEO'
+import { BlogTags } from '~/components/blog/BlogTags'
 import { SocialButtons } from '~/components/SocialButtons'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { PostSimpleLayoutProps } from '~/types'
@@ -29,12 +30,8 @@ export function PostSimple(props: PostSimpleLayoutProps) {
               <dl>
                 <div>
                   <dt className="sr-only">Published on</dt>
-                  <BlogMeta
-                    date={date}
-                    tags={tags}
-                    slug={slug}
-                    readingTime={readingTime}
-                  />
+                  <BlogMeta date={date} slug={slug} readingTime={readingTime} />
+                  <BlogTags tags={tags} />
                 </div>
               </dl>
             </div>

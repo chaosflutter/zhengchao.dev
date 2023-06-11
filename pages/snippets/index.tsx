@@ -5,7 +5,7 @@ import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { SnippetFrontMatter } from '~/types'
 
 export async function getStaticProps() {
-  let snippets = getAllFilesFrontMatter('snippets')
+  const snippets = getAllFilesFrontMatter('snippets')
   return { props: { snippets } }
 }
 
@@ -14,7 +14,7 @@ export default function Snippet({
 }: {
   snippets: SnippetFrontMatter[]
 }) {
-  let description = 'Reuseable code snippets collected by me'
+  const description = 'Reuseable code snippets collected by me'
   return (
     <>
       <PageSeo
