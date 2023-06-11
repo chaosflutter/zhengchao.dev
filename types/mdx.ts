@@ -15,7 +15,8 @@ export interface MdxFrontMatter {
   name?: string
   date: string
   lastmod?: string
-  tags: string[]
+  tags?: string[]
+  topics: string[]
   draft?: boolean
   summary: string
   images?: string[] | string

@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { Pagination } from '~/components/Pagination'
 import { PostListItem } from '~/components/PostListItem'
 import { PostsSearch } from '~/components/PostsSearch'
 import type { ListLayoutProps } from '~/types'
 
 export function ListLayout(props: ListLayoutProps) {
-  const { posts, title, initialDisplayPosts = [], pagination } = props
+  const { posts, title } = props
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent =
@@ -13,11 +12,9 @@ export function ListLayout(props: ListLayoutProps) {
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
-  // If initialDisplayPosts exist, display it if no searchValue is specified
+  // If posts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue
-      ? initialDisplayPosts
-      : filteredBlogPosts
+    posts.length > 0 && !searchValue ? posts : filteredBlogPosts
 
   return (
     <>
@@ -27,8 +24,8 @@ export function ListLayout(props: ListLayoutProps) {
             {title}
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            I write mostly about web development, tech related, and sometime
-            about my personal life. Use the search below to filter by title.
+            I write mostly about web and game development, sometimes about
+            reading, writing, and learning.
           </p>
           <PostsSearch onChange={setSearchValue} />
         </div>
@@ -39,12 +36,6 @@ export function ListLayout(props: ListLayoutProps) {
           ))}
         </ul>
       </div>
-      {pagination && pagination.totalPages > 1 && !searchValue && (
-        <Pagination
-          currentPage={pagination.currentPage}
-          totalPages={pagination.totalPages}
-        />
-      )}
     </>
   )
 }

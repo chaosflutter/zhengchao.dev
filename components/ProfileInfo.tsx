@@ -5,10 +5,10 @@ export function ProfileCardInfo() {
   return (
     <div className="hidden py-6 md:block md:px-3">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-        Chao Zheng
+        Chaosflutter
       </h3>
       <h5 className="py-2 text-gray-700 dark:text-gray-400">
-        Learner | Coder | Gamer
+        Coder | Builder | Gamer
       </h5>
       <div className="mt-4 mb-2 space-y-4">
         <div className="flex items-center text-gray-700 dark:text-gray-200">
@@ -39,8 +39,15 @@ export function ProfileCardInfo() {
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-200">
           <p>
-            Email:
-            <a href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</a>
+            Medium:
+            <a
+              target="_blank"
+              href="https://medium.com/@ivzhangyan"
+              rel="noreferrer"
+              className="hover:underline"
+            >
+              Chaosflutter
+            </a>
           </p>
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-200">

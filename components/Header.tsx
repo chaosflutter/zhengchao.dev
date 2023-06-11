@@ -25,7 +25,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                   className="rounded-full"
                 />
               </div>
-              <div className="font-medium">Chao's Site</div>
+              <div className="font-medium">Chaosflutter</div>
             </div>
           </Link>
         </div>

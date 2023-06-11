@@ -3,16 +3,16 @@ import { PageSeo } from '~/components/SEO'
 import { Tag } from '~/components/Tag'
 import { siteMetadata } from '~/data/siteMetadata'
 import { getAllTags } from '~/libs/tags'
-import type { TagsCount } from '~/types'
+import type { TopicsCount } from '~/types'
 import { kebabCase } from '~/utils/kebab-case'
 
 export function getStaticProps() {
-  let tags = getAllTags('blog')
-  return { props: { tags } }
+  const topics = getAllTags('blog')
+  return { props: { topics } }
 }
 
-export default function Tags({ tags }: { tags: TagsCount }) {
-  let sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
+export default function Topics({ topics }: { topics: TopicsCount }) {
+  const sortedTopics = Object.keys(topics).sort((a, b) => topics[b] - topics[a])
 
   return (
     <>
@@ -23,20 +23,20 @@ export default function Tags({ tags }: { tags: TagsCount }) {
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
         <div className="space-x-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:border-r-2 md:px-6 md:text-6xl md:leading-14">
-            Tags
+            Topics
           </h1>
         </div>
         <div className="flex max-w-lg flex-wrap">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
-          {sortedTags.map((tag) => {
+          {Object.keys(topics).length === 0 && 'No tags found.'}
+          {sortedTopics.map((topic) => {
             return (
-              <div key={tag} className="mt-2 mb-2 mr-5">
-                <Tag text={tag} />
+              <div key={topic} className="mt-2 mb-2 mr-5">
+                <Tag text={topic} />
                 <Link
-                  href={`/tags/${kebabCase(tag)}`}
+                  href={`/topics/${kebabCase(topic)}`}
                   className="-ml-2 text-sm font-semibold uppercase text-gray-600 dark:text-gray-300"
                 >
-                  ({tags[tag]})
+                  ({topics[topic]})
                 </Link>
               </div>
             )

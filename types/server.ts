@@ -30,7 +30,7 @@ export interface GithubRepository {
   repositoryTopics: string[]
 }
 
-export interface TagsCount {
+export interface TopicsCount {
   [tag: string]: number
 }
 

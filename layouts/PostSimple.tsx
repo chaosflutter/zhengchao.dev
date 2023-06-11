@@ -4,14 +4,14 @@ import { PageTitle } from '~/components/PageTitle'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { SectionContainer } from '~/components/SectionContainer'
 import { BlogSeo } from '~/components/SEO'
-import { BlogTags } from '~/components/blog/BlogTags'
+import { BlogTopics } from '~/components/blog/BlogTags'
 import { SocialButtons } from '~/components/SocialButtons'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { PostSimpleLayoutProps } from '~/types'
 
 export function PostSimple(props: PostSimpleLayoutProps) {
   const { frontMatter, type, children, authorDetails, commentConfig } = props
-  const { date, title, slug, fileName, tags, readingTime } = frontMatter
+  const { date, title, slug, fileName, topics, readingTime } = frontMatter
   const postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`
 
   return (
@@ -31,7 +31,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
                 <div>
                   <dt className="sr-only">Published on</dt>
                   <BlogMeta date={date} slug={slug} readingTime={readingTime} />
-                  <BlogTags tags={tags} />
+                  <BlogTopics topics={topics} />
                 </div>
               </dl>
             </div>

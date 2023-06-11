@@ -1,1 +1,4 @@
-export const headerNavLinks = [{ href: '/tags', title: 'Tags' }]
+export const headerNavLinks = [
+  { href: '/posts', title: 'Posts' },
+  { href: '/topics', title: 'Topics' },
+]
