@@ -30,7 +30,7 @@ function Giscus({ config }: GiscusProps) {
     if (commentsNode) commentsNode.appendChild(script)
 
     return () => {
-      let comments = document.getElementById(GISCUS_COMMENTS_ID)
+      const comments = document.getElementById(GISCUS_COMMENTS_ID)
       if (comments) comments.innerHTML = ''
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

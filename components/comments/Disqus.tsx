@@ -3,7 +3,7 @@ import { DISQUS_COMMENTS_ID } from '~/constant'
 import type { DisqusProps } from '~/types'
 
 function Disqus({ identifier, disqus }: DisqusProps) {
-  let [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   function handleLoadComments() {
     setLoaded(true)
@@ -14,8 +14,8 @@ function Disqus({ identifier, disqus }: DisqusProps) {
     }
     // @ts-ignore
     if (window.DISQUS === undefined) {
-      let { shortname } = disqus
-      let script = document.createElement('script')
+      const { shortname } = disqus
+      const script = document.createElement('script')
       script.src = `https://${shortname}.disqus.com/embed.js`
       script.setAttribute('data-timestamp', Date.now().toString())
       script.setAttribute('crossorigin', 'anonymous')

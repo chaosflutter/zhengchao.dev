@@ -1,7 +1,8 @@
 import type { GithubRepository } from '~/types'
 
 export function GithubRepo({ repo }: { repo: GithubRepository }) {
-  let mainLanguage = repo.languages[0]
+  const mainLanguage = repo.languages[0]
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center space-x-4">

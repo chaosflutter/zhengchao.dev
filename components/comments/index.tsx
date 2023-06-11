@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
 import type { CommentsProps } from '~/types'
 
-let Giscus = dynamic(() => import('./Giscus'), { ssr: false })
-let Utterances = dynamic(() => import('./Utterances'), { ssr: false })
-let Disqus = dynamic(() => import('./Disqus'), { ssr: false })
+const Giscus = dynamic(() => import('./Giscus'), { ssr: false })
+const Utterances = dynamic(() => import('./Utterances'), { ssr: false })
+const Disqus = dynamic(() => import('./Disqus'), { ssr: false })
 
 export function Comments({ frontMatter, config }: CommentsProps) {
   let { provider, giscusConfig, utterancesConfig, disqus } = config

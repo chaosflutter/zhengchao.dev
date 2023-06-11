@@ -3,17 +3,17 @@ import { useState } from 'react'
 import { UTTERANCES_COMMENTs_ID } from '~/constant'
 import type { UtterancesProps } from '~/types'
 
-let Utterances = ({ config }: UtterancesProps) => {
-  let [loaded, setLoaded] = useState(false)
-  let { theme, resolvedTheme } = useTheme()
+const Utterances = ({ config }: UtterancesProps) => {
+  const [loaded, setLoaded] = useState(false)
+  const { theme, resolvedTheme } = useTheme()
 
-  let { lightTheme, darkTheme } = config
-  let isDark = theme === 'dark' || resolvedTheme === 'dark'
-  let uttrTheme = isDark ? darkTheme : lightTheme
+  const { lightTheme, darkTheme } = config
+  const isDark = theme === 'dark' || resolvedTheme === 'dark'
+  const uttrTheme = isDark ? darkTheme : lightTheme
 
   function handleLoadComments() {
     setLoaded(true)
-    let script = document.createElement('script')
+    const script = document.createElement('script')
     script.src = 'https://utteranc.es/client.js'
     script.setAttribute('repo', config.repo)
     script.setAttribute('issue-term', config.issueTerm)
@@ -22,11 +22,11 @@ let Utterances = ({ config }: UtterancesProps) => {
     script.setAttribute('crossorigin', 'anonymous')
     script.async = true
 
-    let commentsNode = document.getElementById(UTTERANCES_COMMENTs_ID)
+    const commentsNode = document.getElementById(UTTERANCES_COMMENTs_ID)
     if (commentsNode) commentsNode.appendChild(script)
 
     return () => {
-      let commentsNode = document.getElementById(UTTERANCES_COMMENTs_ID)
+      const commentsNode = document.getElementById(UTTERANCES_COMMENTs_ID)
       if (commentsNode) commentsNode.innerHTML = ''
     }
   }

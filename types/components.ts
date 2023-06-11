@@ -50,12 +50,6 @@ export interface ViewCounterProps {
   className?: string
 }
 
-export interface BlogHeaderProps {
-  title: string
-  date: string
-  readingTime: ReadingTime
-}
-
 export type CommentConfigType = typeof commentConfig
 
 export interface BlogMetaProps {
