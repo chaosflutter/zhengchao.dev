@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import smoothscroll from 'smoothscroll-polyfill'
 
 export function ScrollTopButton() {
-  let [show, setShow] = useState(false)
+  const [show, setShow] = useState(false)
 
   useEffect(() => {
     smoothscroll.polyfill()

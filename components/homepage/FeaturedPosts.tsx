@@ -4,7 +4,7 @@ import type { BlogFrontMatter } from '~/types'
 import { formatDate } from '~/utils/date'
 import { Link } from '../Link'
 
-export function Posts({ posts }: { posts: BlogFrontMatter[] }) {
+export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
   const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent =
@@ -35,7 +35,7 @@ export function Posts({ posts }: { posts: BlogFrontMatter[] }) {
                   <div className="xl:col-span-3">
                     <h2 className="mb-1 text-xl font-medium tracking-tight">
                       <Link
-                        href={`/blog/${slug}`}
+                        href={`/post/${slug}`}
                         className="text-gray-900 dark:text-gray-100"
                       >
                         <span>{title}</span>

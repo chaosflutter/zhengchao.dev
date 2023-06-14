@@ -7,17 +7,17 @@ export function remarkImgToJsx() {
   return (tree: UnistTreeType) => {
     return visit(tree, 'paragraph', (node: UnistNodeType) => {
       // Only visit `p` tags that contain an `img` element
-      let hasImage = node.children.some((n) => n.type === 'image')
+      const hasImage = node.children.some((n) => n.type === 'image')
       if (!hasImage) return
 
-      let imageNode = node.children.find(
+      const imageNode = node.children.find(
         (n) => n.type === 'image'
       ) as UnistImageNode
 
       // Convert original `image` to `next/image` for local files only
-      let imageLocalPath = `${process.cwd()}/public${imageNode.url}`
+      const imageLocalPath = `${process.cwd()}/public${imageNode.url}`
       if (fs.existsSync(imageLocalPath)) {
-        let dimensions = sizeOf(imageLocalPath)
+        const dimensions = sizeOf(imageLocalPath)
         imageNode.type = 'mdxJsxFlowElement'
         imageNode.name = 'Image'
         imageNode.attributes = [
@@ -26,7 +26,7 @@ export function remarkImgToJsx() {
           { type: 'mdxJsxAttribute', name: 'width', value: dimensions.width },
           { type: 'mdxJsxAttribute', name: 'height', value: dimensions.height },
         ]
-        let isThumbnail = imageNode.alt === 'thumbnail-image'
+        const isThumbnail = imageNode.alt === 'thumbnail-image'
         if (isThumbnail) {
           imageNode.attributes.push({
             type: 'mdxJsxAttribute',

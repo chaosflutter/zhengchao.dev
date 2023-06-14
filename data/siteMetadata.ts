@@ -15,9 +15,10 @@ export const siteMetadata = {
   email: 'zhchaozju@gmail.com',
   github: 'https://github.com/wbirdss',
   twitter: 'https://twitter.com/zhchaozju',
-  facebook: '',
+  medium: 'https://medium.com/@ivzhangyan',
   youtube: 'https://www.youtube.com/channel/UCYVxyn6DHeXxYxC75_ty9Ng',
   linkedin: '',
+  facebook: '',
   locale: 'en-US',
   analyticsURL: 'https://analytics.google.com/analytics/web/',
   analytics: {

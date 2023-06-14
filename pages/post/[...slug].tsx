@@ -11,7 +11,7 @@ import type { AuthorFrontMatter, BlogProps, MdxPageLayout } from '~/types'
 const DEFAULT_LAYOUT: MdxPageLayout = 'PostSimple'
 
 export async function getStaticPaths() {
-  const posts = getFiles('blog')
+  const posts = getFiles('posts')
   return {
     paths: posts.map((p: string) => ({
       params: {
@@ -27,14 +27,14 @@ export async function getStaticProps({
 }: {
   params: { slug: string[] }
 }) {
-  const allPosts = getAllFilesFrontMatter('blog')
+  const allPosts = getAllFilesFrontMatter('posts')
   const postIndex = allPosts.findIndex(
     (post) => formatSlug(post.slug) === params.slug.join('/')
   )
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
   const page = Math.ceil((postIndex + 1) / POSTS_PER_PAGE)
-  const post = await getFileBySlug('blog', params.slug.join('/'))
+  const post = await getFileBySlug('posts', params.slug.join('/'))
 
   const authors = post.frontMatter.authors || ['default']
   const authorDetails = await Promise.all(

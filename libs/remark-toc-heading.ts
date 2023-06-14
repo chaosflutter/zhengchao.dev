@@ -10,7 +10,7 @@ import type {
 export function remarkTocHeading(options: RemarkTocHeadingOptions) {
   return (tree: UnistTreeType) =>
     visit(tree, 'heading', (node: UnistNodeType) => {
-      let textContent = toString(node)
+      const textContent = toString(node)
       options.exportRef.push({
         value: textContent,
         url: '#' + slug(textContent),

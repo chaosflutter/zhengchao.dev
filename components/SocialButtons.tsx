@@ -10,9 +10,9 @@ export function SocialButtons({
   title,
   fileName,
 }: SocialButtonsProps) {
-  let creatEditOnGithubUrl = (fileName: string) =>
-    `${siteMetadata.siteRepo}/blob/main/data/blog/${fileName}`
-  let createDiscussonTwitterUrl = (postUrl: string) =>
+  const creatEditOnGithubUrl = (fileName: string) =>
+    `${siteMetadata.siteRepo}/blob/main/data/post/${fileName}`
+  const createDiscussonTwitterUrl = (postUrl: string) =>
     `https://twitter.com/search?q=${encodeURIComponent(postUrl)}`
 
   return (

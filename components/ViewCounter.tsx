@@ -4,11 +4,11 @@ import { fetcher } from '~/utils/fetcher'
 const { default: useSWR } = require('swr')
 
 export function ViewCounter({ slug, className }: ViewCounterProps) {
-  let { data } = useSWR(`/api/views/${slug}`, fetcher) as ViewApiResponse
-  let views = Number(data?.total)
+  const { data } = useSWR(`/api/views/${slug}`, fetcher) as ViewApiResponse
+  const views = Number(data?.total)
 
   useEffect(() => {
-    let registerView = () =>
+    const registerView = () =>
       fetch(`/api/views/${slug}`, {
         method: 'POST',
       })

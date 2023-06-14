@@ -4,7 +4,8 @@ import { Link } from './Link'
 import { Tag } from './Tag'
 
 export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
-  let { slug, date, title, summary, tags } = frontMatter
+  const { slug, date, title, summary, topics } = frontMatter
+
   return (
     <li key={slug}>
       <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -18,14 +19,14 @@ export function PostListItem({ frontMatter }: { frontMatter: MdxFrontMatter }) {
           <div>
             <h3 className="text-2xl font-bold leading-8 tracking-tight">
               <Link
-                href={`/blog/${slug}`}
+                href={`/post/${slug}`}
                 className="text-gray-900 dark:text-gray-100"
               >
                 <span className="umami--click--blog-title">{title}</span>
               </Link>
             </h3>
             <div className="mt-1 flex flex-wrap">
-              {tags.map((tag) => (
+              {topics.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
             </div>

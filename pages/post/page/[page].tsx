@@ -6,7 +6,7 @@ import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogListProps } from '~/types'
 
 export async function getStaticPaths() {
-  let totalPosts = getAllFilesFrontMatter('blog')
+  let totalPosts = getAllFilesFrontMatter('posts')
   let totalPages = Math.ceil(totalPosts.length / POSTS_PER_PAGE)
   let paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { page: string } }) {
   let { page } = params
-  let posts = getAllFilesFrontMatter('blog')
+  let posts = getAllFilesFrontMatter('posts')
   let pageNumber = parseInt(page)
   let initialDisplayPosts = posts.slice(
     POSTS_PER_PAGE * (pageNumber - 1),

@@ -5,9 +5,9 @@ import type { BlogFrontMatter } from '~/types'
 function generateRssItem(post: BlogFrontMatter) {
   return `
   <item>
-    <guid>${siteMetadata.siteUrl}/blog/${post.slug}</guid>
+    <guid>${siteMetadata.siteUrl}/post/${post.slug}</guid>
     <title>${escape(post.title)}</title>
-    <link>${siteMetadata.siteUrl}/blog/${post.slug}</link>
+    <link>${siteMetadata.siteUrl}/post/${post.slug}</link>
     ${post.summary && `<description>${escape(post.summary)}</description>`}
     <pubDate>${new Date(post.date).toUTCString()}</pubDate>
     <author>${siteMetadata.email} (${siteMetadata.author})</author>

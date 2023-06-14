@@ -1,7 +1,7 @@
-import { Twemoji } from '~/components/Twemoji'
 import { siteMetadata } from '~/data/siteMetadata'
 
 export function ProfileCardInfo() {
+  const { twitter, github, medium, youtube } = siteMetadata
   return (
     <div className="hidden py-6 md:block md:px-3">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
@@ -13,36 +13,36 @@ export function ProfileCardInfo() {
       <div className="mt-4 mb-2 space-y-4">
         <div className="flex items-center text-gray-700 dark:text-gray-200">
           <p>
-            Twitter:
+            <b>Twitter: </b>
             <a
               target="_blank"
-              href="https://twitter.com/zhchaozju"
+              href={twitter}
               rel="noreferrer"
               className="hover:underline"
             >
-              @zhchaozju
+              zhchaozju
             </a>
           </p>
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-200">
           <p>
-            Github:
+            <b>Github: </b>
             <a
               target="_blank"
-              href="https://github.com/wbirdss"
+              href={github}
               rel="noreferrer"
               className="hover:underline"
             >
-              @wbirdss
+              wbirdss
             </a>
           </p>
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-200">
           <p>
-            Medium:
+            <b>Medium: </b>
             <a
               target="_blank"
-              href="https://medium.com/@ivzhangyan"
+              href={medium}
               rel="noreferrer"
               className="hover:underline"
             >
@@ -52,10 +52,10 @@ export function ProfileCardInfo() {
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-200">
           <p>
-            Youtube:
+            <b>Youtube: </b>
             <a
               target="_blank"
-              href="https://www.youtube.com/channel/UCYVxyn6DHeXxYxC75_ty9Ng"
+              href={youtube}
               rel="noreferrer"
               className="hover:underline"
             >

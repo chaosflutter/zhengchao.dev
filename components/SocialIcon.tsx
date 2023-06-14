@@ -7,7 +7,7 @@ import Mail from '~/icons/mail.svg'
 import Twitter from '~/icons/twitter.svg'
 import Youtube from '~/icons/youtube.svg'
 
-export let SocialIconsMap = {
+export const SocialIconsMap = {
   Mail,
   Github,
   Facebook,
@@ -17,8 +17,8 @@ export let SocialIconsMap = {
 }
 
 export function SocialIcon({ name, href }: SocialIconProps) {
-  let SocialSvg = SocialIconsMap[name]
-  let attrs: AnchorHTMLAttributes<HTMLAnchorElement> = {
+  const SocialSvg = SocialIconsMap[name]
+  const attrs: AnchorHTMLAttributes<HTMLAnchorElement> = {
     href,
     target: name !== 'Mail' ? '_blank' : '_self',
     rel: 'noopener noreferrer',

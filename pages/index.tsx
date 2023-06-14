@@ -1,5 +1,5 @@
 import { PageSeo } from 'components/SEO'
-import { Posts } from '~/components/homepage/Posts'
+import { FeaturedPosts } from '~/components/homepage/FeaturedPosts'
 import { TypedBios } from '~/components/homepage/TypedBios'
 import { ProfileCard } from '~/components/ProfileCard'
 import { siteMetadata } from '~/data/siteMetadata'
@@ -7,7 +7,9 @@ import { getAllFilesFrontMatter } from '~/libs/mdx'
 import type { BlogFrontMatter } from '~/types'
 
 export function getStaticProps() {
-  const posts = getAllFilesFrontMatter('blog')
+  const posts = getAllFilesFrontMatter('posts')
+
+  // display featured posts later on
   return { props: { posts } }
 }
 
@@ -30,7 +32,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
           </div>
         </div>
       </div>
-      <Posts posts={posts} />
+      <FeaturedPosts posts={posts} />
     </>
   )
 }

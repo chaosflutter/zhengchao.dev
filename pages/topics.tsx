@@ -2,12 +2,12 @@ import { Link } from '~/components/Link'
 import { PageSeo } from '~/components/SEO'
 import { Tag } from '~/components/Tag'
 import { siteMetadata } from '~/data/siteMetadata'
-import { getAllTags } from '~/libs/tags'
+import { getAllTopics } from '~/libs/topics'
 import type { TopicsCount } from '~/types'
 import { kebabCase } from '~/utils/kebab-case'
 
 export function getStaticProps() {
-  const topics = getAllTags('blog')
+  const topics = getAllTopics('posts')
   return { props: { topics } }
 }
 

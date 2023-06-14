@@ -29,7 +29,7 @@ export function TypedBios() {
           <br />
           I am also a fan of <Twemoji emoji="video-game" /> video game. I like
           it so much that I decided to be a game developer. I have made some
-          sgames with Unity3D and C#. So I would like to share some of my
+          games with Unity3D and C#. So I would like to share some of my
           experience in this blog.
           <br />
           <br />

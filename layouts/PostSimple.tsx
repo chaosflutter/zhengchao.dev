@@ -2,7 +2,6 @@ import { BlogMeta } from '~/components/post/BlogMeta'
 import { Comments } from '~/components/comments'
 import { PageTitle } from '~/components/PageTitle'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
-import { SectionContainer } from '~/components/SectionContainer'
 import { BlogSeo } from '~/components/SEO'
 import { BlogTopics } from '~/components/post/BlogTopics'
 import { SocialButtons } from '~/components/SocialButtons'
@@ -15,7 +14,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
   const postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`
 
   return (
-    <SectionContainer>
+    <>
       <BlogSeo
         url={`${siteMetadata.siteUrl}/${type}/${slug}`}
         authorDetails={authorDetails}
@@ -51,7 +50,7 @@ export function PostSimple(props: PostSimpleLayoutProps) {
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </>
   )
 }
 

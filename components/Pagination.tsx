@@ -2,8 +2,8 @@ import type { PaginationType } from '~/types'
 import { Link } from './Link'
 
 export function Pagination({ totalPages, currentPage }: PaginationType) {
-  let hasPrevPage = currentPage - 1 > 0
-  let hasNextPage = currentPage + 1 <= totalPages
+  const hasPrevPage = currentPage - 1 > 0
+  const hasNextPage = currentPage + 1 <= totalPages
 
   return (
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -19,7 +19,7 @@ export function Pagination({ totalPages, currentPage }: PaginationType) {
         {hasPrevPage && (
           <Link
             href={
-              currentPage - 1 === 1 ? `/blog/` : `/blog/page/${currentPage - 1}`
+              currentPage - 1 === 1 ? `/post/` : `/post/page/${currentPage - 1}`
             }
           >
             <button>Previous</button>
@@ -37,7 +37,7 @@ export function Pagination({ totalPages, currentPage }: PaginationType) {
           </button>
         )}
         {hasNextPage && (
-          <Link href={`/blog/page/${currentPage + 1}`}>
+          <Link href={`/post/page/${currentPage + 1}`}>
             <button>Next</button>
           </Link>
         )}

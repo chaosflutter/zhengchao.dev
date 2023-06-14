@@ -9,8 +9,8 @@ let SITE_URL = 'https://www.leohuynh.dev'
   let prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
   let pages = await globby([
     'pages/*.tsx',
-    'data/blog/**/*.mdx',
-    'data/blog/**/*.md',
+    'data/post/**/*.mdx',
+    'data/post/**/*.md',
     'public/tags/**/*.xml',
     '!pages/_*.tsx',
     '!pages/api',
@@ -30,7 +30,7 @@ let SITE_URL = 'https://www.leohuynh.dev'
               .replace('.md', '')
               .replace('/feed.xml', '')
             let route = path === '/index' ? '' : path
-            if (page === `pages/404.ts` || page === `pages/blog/[...slug].ts`) {
+            if (page === `pages/404.ts` || page === `pages/post/[...slug].ts`) {
               return
             }
             return `<url><loc>${SITE_URL}${route}</loc></url>\n`

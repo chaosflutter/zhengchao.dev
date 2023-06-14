@@ -6,10 +6,10 @@ import { Image } from './Image'
 import { Link } from './Link'
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  let { title, description, imgSrc, url, repo, builtWith } = project
-  let { data } = useSWR(`/api/github?repo=${repo}`, fetcher)
-  let repository: GithubRepository = data?.repository
-  let href = repository?.url || url
+  const { title, description, imgSrc, url, repo, builtWith } = project
+  const { data } = useSWR(`/api/github?repo=${repo}`, fetcher)
+  const repository: GithubRepository = data?.repository
+  const href = repository?.url || url
 
   return (
     <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
@@ -60,9 +60,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label={`Link to ${title}`}
             >
-              <span className="umami--click--project-learn-more">
-                Learn more &rarr;
-              </span>
+              <span>Learn more &rarr;</span>
             </Link>
           )}
         </div>

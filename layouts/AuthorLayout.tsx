@@ -1,31 +1,29 @@
-import React from 'react'
-import { ProfileCard } from '~/components/ProfileCard'
-import { PageSeo } from '~/components/SEO'
+import { PageSeo } from 'components/SEO'
+import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { siteMetadata } from '~/data/siteMetadata'
-import type { AuthorLayoutProps } from '~/types'
+import type { ResumeLayoutProps } from '~/types'
 
-export function AuthorLayout({ children }: AuthorLayoutProps) {
-  const title = 'About'
-  const description = 'More about me and this blog'
+export function ResumeLayout({ children }: ResumeLayoutProps) {
+  const description = 'My professional career, experience, and skills.'
 
   return (
     <>
       <PageSeo
-        title={`${title} - ${siteMetadata.author} - ${siteMetadata.title}`}
-        description={`${title} - ${siteMetadata.title} - ${description}`}
+        title={`Resume - ${siteMetadata.fullName} - ${description}`}
+        description={`Resume - ${siteMetadata.fullName} - ${description}`}
       />
+      <ScrollTopButton />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            {title}
+            About
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {description}
           </p>
         </div>
-        <div className="items-start space-y-2 pt-8 xl:grid xl:grid-cols-3 xl:space-y-0">
-          <ProfileCard />
-          <div className="prose prose-lg max-w-none pb-8 dark:prose-dark xl:col-span-2 xl:pl-10">
+        <div className="items-start space-y-2 xl:space-y-0">
+          <div className="prose prose-lg max-w-none pt-8 pb-8 dark:prose-dark">
             {children}
           </div>
         </div>
@@ -34,4 +32,4 @@ export function AuthorLayout({ children }: AuthorLayoutProps) {
   )
 }
 
-export default AuthorLayout
+export default ResumeLayout
