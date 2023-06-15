@@ -1,9 +1,9 @@
 import { PageSeo } from 'components/SEO'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { siteMetadata } from '~/data/siteMetadata'
-import type { ResumeLayoutProps } from '~/types'
+import type { AuthorLayoutProps } from '~/types'
 
-export function ResumeLayout({ children }: ResumeLayoutProps) {
+export function ResumeLayout({ children }: AuthorLayoutProps) {
   const description = 'My professional career, experience, and skills.'
 
   return (
