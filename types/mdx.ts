@@ -4,9 +4,7 @@ import type { DevIconsMap } from '~/components/DevIcon'
 export type MdxPageLayout =
   | 'AuthorLayout'
   | 'ListLayout'
-  | 'PostLayout'
   | 'PostSimple'
-  | 'ResumeLayout'
   | 'SnippetLayout'
 
 export interface MdxFrontMatter {

@@ -1,26 +1,16 @@
-# My Personal Site
+## About me
 
-My personal over-engineering site on the cloud.
+I'm a software engineer, have been working on web development since 2014. I decided to be a game developer recently, and I'm coding with Unity and C# now. So I will write articles mostly about these tech stacks.
 
-## Motivation
-
-> Sharing is learning!
-
-I am a software engineer who loves reading and writing. I document my learnings and achievements in both study and work, hoping that these shares can help others as well.
-
-In addition, I occasionally write about personal life-related topics, such as gourmet food, fitness, and digital products, among others. If you find that we share some common interests, feel free to contact me through the blog comments 😊
-
-## Tech stack
+## About this blog
 
 This blog is hosted on [Vercel](https://vercel.com/), built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/) using **Tailwind Nextjs Starter Blog**.
 
-A huge thanks to [Leo Huynh](https://github.com/hta218/leohuynh.dev) for the minimal, lightweight, and super easy-to-customize blog starter.
+## Thanks
 
-## Assets
+Thanks to [Leo Huynh](https://github.com/hta218/leohuynh.dev) and [Flavio Copes](https://flaviocopes.com/) for the inspiration of beautiful blog design.
 
-The images in this blog are from [Unsplash](https://unsplash.com/), gifs from [GIPHY](https://giphy.com/), and illustrations are from [Storyset](https://storyset.com/).
-
-Thanks for the free resources 🙏
+The images in this blog are from [Unsplash](https://unsplash.com/), and emojis are from [twemoji](https://github.com/twitter/twemoji), thanks for the free resources.
 
 **This blog has a legacy version built with Gatsby which can be found [here](https://chaosflutter.vercel.app/)**.
 

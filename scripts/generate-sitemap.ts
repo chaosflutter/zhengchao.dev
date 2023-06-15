@@ -2,34 +2,34 @@ import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
 
-let SITE_URL = 'https://www.leohuynh.dev'
+const SITE_URL = 'https://chaosflutter.xyz'
 
 ;(async () => {
   console.log('Generating sitemap...')
-  let prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
-  let pages = await globby([
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
+  const pages = await globby([
     'pages/*.tsx',
-    'data/post/**/*.mdx',
-    'data/post/**/*.md',
-    'public/tags/**/*.xml',
+    'data/posts/**/*.mdx',
+    'data/posts/**/*.md',
+    'public/topics/**/*.xml',
     '!pages/_*.tsx',
     '!pages/api',
   ])
 
-  let sitemap = `
+  const sitemap = `
 			<?xml version="1.0" encoding="UTF-8"?>
 			<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 				${pages
           .map((page) => {
-            let path = page
+            const path = page
               .replace('pages/', '/')
-              .replace('data/blog', '/blog')
+              .replace('data/posts', '/post')
               .replace('public/', '/')
               .replace('.ts', '')
               .replace('.mdx', '')
               .replace('.md', '')
               .replace('/feed.xml', '')
-            let route = path === '/index' ? '' : path
+            const route = path === '/index' ? '' : path
             if (page === `pages/404.ts` || page === `pages/post/[...slug].ts`) {
               return
             }
@@ -39,7 +39,7 @@ let SITE_URL = 'https://www.leohuynh.dev'
 			</urlset>
     `
 
-  let formatted = prettier.format(sitemap, {
+  const formatted = prettier.format(sitemap, {
     ...prettierConfig,
     parser: 'html',
   })

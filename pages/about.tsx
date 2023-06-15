@@ -8,7 +8,7 @@ export async function getStaticProps() {
 }
 
 export default function About({ authorData }: { authorData: MdxFileData }) {
-  let { mdxSource, frontMatter } = authorData
+  const { mdxSource, frontMatter } = authorData
 
   return (
     <MDXLayoutRenderer

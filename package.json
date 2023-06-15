@@ -9,7 +9,8 @@
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts --dir pages",
     "prepare": "husky install",
     "typecheck": "npx tsc -b",
-    "upgrade": "rimraf package-lock.json && npx taze major -w && ni"
+    "upgrade": "rimraf package-lock.json && npx taze major -w && ni",
+    "compose": "node ./scripts/compose.mjs"
   },
   "dependencies": {
     "@octokit/graphql": "^5.0.5",

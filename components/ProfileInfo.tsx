@@ -8,7 +8,7 @@ export function ProfileCardInfo() {
         Chaosflutter
       </h3>
       <h5 className="py-2 text-gray-700 dark:text-gray-400">
-        Coder | Builder | Gamer
+        coder | builder | gamer
       </h5>
       <div className="mt-4 mb-2 space-y-4">
         <div className="flex items-center text-gray-700 dark:text-gray-200">
