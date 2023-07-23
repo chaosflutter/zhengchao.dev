@@ -1,6 +1,5 @@
 import type { BlogMetaProps } from '~/types'
 import { formatDate } from '~/utils/date'
-import { ViewCounter } from '../ViewCounter'
 
 export function BlogMeta({ date, slug, readingTime }: BlogMetaProps) {
   return (
@@ -8,8 +7,6 @@ export function BlogMeta({ date, slug, readingTime }: BlogMetaProps) {
       <time dateTime={date}>{formatDate(date)}</time>
       <span className="mx-2">{` • `}</span>
       <span>{readingTime.text.replace('min', 'mins')}</span>
-      <span className="mx-2">{` • `}</span>
-      <ViewCounter slug={slug} />
     </dd>
   )
 }

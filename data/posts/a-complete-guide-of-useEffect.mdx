@@ -7,20 +7,15 @@ topics: ['react', 'hooks', 'useEffect', 'translation']
 
 <small>
   备注：这是一篇我之前翻译的 Dan Abramov的文章，原文地
-  址：https://overreacted.io/a-complete-guide-to-useeffect/,现同步过来，顺便做了
-  一些文字和格式上的优化。12
+  址：https://overreacted.io/a-complete-guide-to-useeffect/,
+  现同步过来，顺便做了一些文字和格式上的优化。
 </small>
 
 ---
 
-你用 [Hooks](https://reactjs.org/docs/hooks-intro.html) 写了一些组件，甚或写了一
-个小应用。你可能很满意， 觉得使用它的 API 很舒服并且在这个过程中习得了一些小技
-巧。你甚至可能写了一些 [custom
-Hooks](https://reactjs.org/docs/hooks-custom.html)去抽离重复的逻辑（精简掉了 300
-行代码），并且得意地展示给你的同事看，“干得漂亮”，他们如是说。
+你用 [Hooks](https://reactjs.org/docs/hooks-intro.html) 写了一些组件，甚或写了一个小应用。你可能很满意，觉得使用它的 API 很舒服并且在这个过程中学到了一些小技巧。你还可能写了一些 [custom Hooks](https://reactjs.org/docs/hooks-custom.html) 去抽离重复的逻辑（精简掉了 300 行代码！），并且得意地展示给你的同事看，“干得漂亮”，他们如是说。
 
-但有时候当你使用`useEffect`你总觉得哪儿有点不对劲。你会嘀咕你可能遗漏了什么。它
-看起来像 class 的生命周期...但真的是这样吗？你发觉自己在问类似下面的这些问题：
+但有时候当你使用`useEffect`你总觉得哪儿有点不对劲。你可能会嘀咕是不是遗漏了什么。它看起来像 class 组件的生命周期...但真的是这样吗？你发觉自己在问类似下面的这些问题：
 
 - 🤔 如何用`useEffect`模拟`componentDidMount`生命周期？
 - 🤔 如何正确地在`useEffect`里请求数据？`[]`又是什么？
@@ -28,18 +23,13 @@ Hooks](https://reactjs.org/docs/hooks-custom.html)去抽离重复的逻辑（精
 - 🤔 为什么有时候会出现无限重复请求的问题？
 - 🤔 为什么有时候在 effect 里拿到的是旧的 state 或 prop？
 
-当我刚开始使用 Hooks 的时候，我也同样被上面这些问题所困扰。甚至当我写最初的文档
-时，我也并没有扎实地掌握某些细节。我经历了一些“啊哈”的开窍时刻，我想把这些分享给
-你。**这篇文章会深入讲解帮你明白上面问题的答案。**
+当我刚开始使用 Hooks 的时候，我也同样被上面这些问题所困扰。甚至当我写最初的文档时，我也并没有扎实地掌握某些细节。我经历了一些“啊哈”的开窍时刻，我想把这些分享给你。**这篇文章会深入讲解帮你明白上面问题的答案。**
 
-在看答案之前，我们需要先往后退一步。这篇文章的目的不是给你一个要点清单，而是想帮
-你真正地领会`useEffect`。其实我们并没有太多需要学习的，事实上，我们会花很多时间
-试图忘记某些已经习得的概念（unlearning）。
+在看答案之前，我们需要先往后退一步。这篇文章的目的不是给你一个要点清单，而是想帮你真正地领会`useEffect`。其实我们并没有太多需要学习的，事实上，我们会花很多时间试图忘记某些已经习得的概念（unlearning）。
 
-**当我不再透过熟悉的 class 生命周期方法去窥视`useEffect` 这个 Hook 的时候，我才
-得以融会贯通。**
+**当我不再透过熟悉的 class 组件生命周期方法去窥视`useEffect` 这个 Hook 的时候，我才得以融会贯通。**
 
-> “忘记你已经学到的。” — Yoda
+> 忘记你已经学到的。 — Yoda
 
 ![Yoda sniffing the air. Caption: “I smell
 bacon.”](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useEffect/yoda.jpg)
@@ -49,31 +39,21 @@ bacon.”](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useEffect/y
 **这篇文章会假设你对[`useEffect`](https://reactjs.org/docs/hooks-effect.html)
 API 有一定程度的了解。**
 
-**这篇文章真的很长。它更像一本 mini 书，这也是我更喜欢的形式。如果你很匆忙或者并
-不是太关心本文主题的话，你也可以直接看下面的摘要。**
+**这篇文章真的很长。它更像一本 mini 书，这也是我更喜欢的形式。如果你很匆忙或者并不是太关心本文主题的话，你也可以直接看下面的摘要。**
 
-**如果你对于深入研究感觉不是很适应的话，你或许可以等下面这些解释出现在其他文章中
-再去了解也行。就像 2013 年 React 刚出世的时候，大家需要时间去理解消化一种不同的
-心智模型。知识也需要时间去普及。**
+**如果你对于深入研究感觉不是很适应的话，你或许可以等下面这些解释出现在其他文章中再去了解也行。就像 2013 年 React 刚出世的时候，大家需要时间去理解消化一种不同的心智模型。知识也需要时间去普及。**
 
 ---
 
 ## 摘要
 
-如果你不想阅读整篇文章，可以快速浏览这份摘要。要是某些部分不容易理解，你可以往下
-滚动寻找相关的内容去阅读。
+如果你不想阅读整篇文章，可以快速浏览这份摘要。要是某些部分不容易理解，你可以往下滚动寻找相关的内容去阅读。
 
 如果你打算阅读整篇文章，你完全可以跳过这部分。我会在文章末尾带上摘要的链接。
 
 **🤔 Question: 如何用`useEffect`模拟`componentDidMount`生命周期？**
 
-虽然可以使用`useEffect(fn, [])`，但它们并不完全相等。和`componentDidMount`不一
-样，`useEffect`会*捕获* props 和 state。所以即便在回调函数里，你拿到的还是初始的
-props 和 state。如果你想得到“最新”的值，你可以使用 ref。不过，通常会有更简单的实
-现方式，所以你并不一定要用 ref。记住，effects 的心智模型和`componentDidMount`以
-及其他生命周期是不同的，试图找到它们之间完全一致的表达反而更容易使你混淆。想要更
-有效，你需要“think in effects”，它的心智模型更接近于实现状态同步，而不是响应生命
-周期事件。
+虽然可以使用`useEffect(fn, [])`，但它们并不完全相等。和`componentDidMount`不一样，`useEffect`会*捕获* props 和 state。所以即便在回调函数里，你拿到的还是初始的 props 和 state。如果你想得到“最新”的值，你可以使用 ref。不过，通常会有更简单的实现方式，所以你并不一定要用 ref。记住，effects 的心智模型和`componentDidMount`以及其他生命周期是不同的，试图找到它们之间完全一致的表达反而更容易使你混淆。想要更有效，你需要“think in effects”，它的心智模型更接近于实现状态同步，而不是响应生命周期事件。
 
 **🤔 Question: 如何正确地在`useEffect`里请求数据？`[]`又是什么？**
 
