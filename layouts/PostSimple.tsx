@@ -10,7 +10,8 @@ import type { PostSimpleLayoutProps } from '~/types'
 
 function PostSimple(props: PostSimpleLayoutProps) {
   const { frontMatter, type, children, authorDetails, commentConfig } = props
-  const { date, title, slug, fileName, topics, readingTime } = frontMatter
+  const { date, title, slug, fileName, topics, readingTime, origin } =
+    frontMatter
   const postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`
 
   return (
@@ -31,6 +32,14 @@ function PostSimple(props: PostSimpleLayoutProps) {
                   <dt className="sr-only">Published on</dt>
                   <BlogMeta date={date} slug={slug} readingTime={readingTime} />
                   <BlogTopics topics={topics} />
+                  {origin && (
+                    <div className="mt-2 text-gray-500 dark:text-gray-400">
+                      translated from：
+                      <a href={origin} target="_blank">
+                        {origin}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </dl>
             </div>

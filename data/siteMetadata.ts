@@ -7,7 +7,7 @@ export const siteMetadata = {
   description:
     "Chao's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
   language: 'en-us',
-  siteUrl: 'https://chaosflutter.xyz',
+  siteUrl: 'https://zhengchao.dev',
   siteRepo: 'https://github.com/wbirdss/chaosflutter.xyz',
   siteLogo: '/static/images/profile-square.jpg',
   image: '/static/images/profile-square.jpg',

@@ -28,9 +28,9 @@ export function TypedBios() {
           <br />
           <br />
           I am also a fan of <Twemoji emoji="video-game" /> video game. I like
-          it so much that I decided to be a game developer. I have made some
-          games with Unity3D and C#. So I would like to share some of my
-          experience in this blog.
+          it so much that I'm making some 2D/3D/VR games with Unity3D and C# by
+          myself. So I would like to share some of my game development
+          experience too. I will write in both English and Chinese.
           <br />
           <br />
           If you want to know more about me, you can find me through the social
@@ -40,7 +40,7 @@ export function TypedBios() {
       </ul>
       <span
         ref={el}
-        className="text-neutral-900 dark:text-neutral-200 tracking-tight"
+        className="tracking-tight text-neutral-900 dark:text-neutral-200"
       />
     </div>
   )

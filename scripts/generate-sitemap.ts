@@ -2,7 +2,7 @@ import fs from 'fs'
 import { globby } from 'globby'
 import prettier from 'prettier'
 
-const SITE_URL = 'https://chaosflutter.xyz'
+const SITE_URL = 'https://zhengchao.dev'
 
 ;(async () => {
   console.log('Generating sitemap...')

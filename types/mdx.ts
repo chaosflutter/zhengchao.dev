@@ -19,6 +19,7 @@ export interface MdxFrontMatter {
   summary: string
   images?: string[] | string
   authors?: string[]
+  origin?: string
   slug: string
 }
 
