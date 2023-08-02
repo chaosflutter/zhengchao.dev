@@ -45,7 +45,7 @@ function PostSimple(props: PostSimpleLayoutProps) {
             </div>
           </header>
           <div className="pb-8">
-            <div className="prose prose-lg pb-8 dark:prose-dark md:prose-xl">
+            <div className="prose prose-lg pb-8 dark:prose-dark">
               {children}
             </div>
             <div className="border-t border-gray-200 dark:border-gray-700">
