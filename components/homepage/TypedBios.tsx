@@ -30,7 +30,7 @@ export function TypedBios() {
           I am also a fan of <Twemoji emoji="video-game" /> video game. I like
           it so much that I'm making some 2D/3D/VR games with Unity3D and C# by
           myself. So I would like to share some of my game development
-          experience too. I will write in both English and Chinese.
+          experience. I will write in both English and Chinese.
           <br />
           <br />
           If you want to know more about me, you can find me through the social
