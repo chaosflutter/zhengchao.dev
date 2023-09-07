@@ -17,7 +17,7 @@ export function FeaturedPosts({ posts }: { posts: BlogFrontMatter[] }) {
     posts.length > 0 && !searchValue ? posts : filteredBlogPosts
 
   return (
-    <div className="mt-8 md:mt-16">
+    <div>
       <div className="flex justify-between">
         <h1 className="mb-4 text-2xl font-bold">Posts</h1>
         <PostsSearch onChange={setSearchValue} />

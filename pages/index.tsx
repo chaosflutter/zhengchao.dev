@@ -20,6 +20,18 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         title={siteMetadata.title}
         description={siteMetadata.description}
       />
+      <div className="mt-8 divide-y divide-gray-200 dark:divide-gray-700 md:mt-16">
+        <div className="my-4 md:grid md:grid-cols-3 md:pt-6 md:pb-8">
+          <div className="hidden md:block">
+            <ProfileCard />
+          </div>
+          <div className="md:col-span-2 md:pl-8">
+            <div className="text-lg leading-8 text-gray-600 dark:text-gray-400">
+              <TypedBios />
+            </div>
+          </div>
+        </div>
+      </div>
       <FeaturedPosts posts={posts} />
     </>
   )
