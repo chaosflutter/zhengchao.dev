@@ -4,6 +4,7 @@ import { TypedBios } from '~/components/homepage/TypedBios'
 import { ProfileCard } from '~/components/ProfileCard'
 import { siteMetadata } from '~/data/siteMetadata'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
+import { ScrollTopButton } from '~/components/ScrollTopButton'
 import type { BlogFrontMatter } from '~/types'
 
 export function getStaticProps() {
@@ -32,6 +33,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         </div>
       </div>
       <FeaturedPosts posts={posts} />
+      <ScrollTopButton />
     </>
   )
 }
