@@ -6,29 +6,28 @@ import Mail from '~/icons/mail.svg'
 
 const socialMediums = [
   {
-    name: 'Twitter',
+    name: 'twitter',
     url: siteMetadata.twitter,
     Svgr: Twitter,
   },
   {
-    name: 'GitHub',
+    name: 'github',
     url: siteMetadata.github,
     Svgr: Github,
   },
   {
-    name: 'Medium',
+    name: 'medium',
     url: siteMetadata.medium,
     Svgr: Medium,
   },
   {
-    name: 'Email',
+    name: 'email',
     url: `mailto:${siteMetadata.email}`,
     Svgr: Mail,
   },
 ]
 
-export function ProfileCardInfo() {
-  const { twitter, github, medium } = siteMetadata
+export const ProfileCardInfo = () => {
   return (
     <div className="hidden py-6 md:block md:px-3">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
@@ -43,7 +42,7 @@ export function ProfileCardInfo() {
             className="hover:underline flex items-center"
             key={name}
           >
-            <div className="mr-1">
+            <div className="mr-1 mt-1">
               <Svgr width="14" height="14" />
             </div>
             {name}

@@ -21,20 +21,15 @@ export function TypedBios() {
     <div className="-mt-1">
       <ul id="bios" className="hidden1">
         <li>
-          Hello, I'm a software engineer, living in{' '}
-          <Twemoji emoji="flag-china" /> China. I'm enthusiastic about coding
-          and writing. I have been developing web applications with JavaScript,
-          TypeScript, React, Vue, Node.js, and more since 2014.
+          I am a programmer living in China <Twemoji emoji="flag-china" /> who
+          loves coding and writing. I started programming in 2014 and excel in
+          front-end development. I also do Flutter client development, as well
+          as server-side development based on Go and Node. I use Python for
+          various tasks as well. Recently, I've been learning Rust and C#, and
+          I'm particularly interested in frontend toolchains, editor
+          development, and game development.
           <br />
-          <br />
-          I am also a fan of <Twemoji emoji="video-game" /> video game. I like
-          it so much that I'm making some 2D/3D/VR games with Unity3D and C# by
-          myself. So I would like to share some of my game development
-          experience. I will write in both English and Chinese.
-          <br />
-          <br />
-          If you want to know more about me, you can find me through the social
-          media accounts on the left. Happy reading!{' '}
+          Enjoy reading!
           <Twemoji emoji="clinking-beer-mugs" />
         </li>
       </ul>
