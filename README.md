@@ -1,6 +1,8 @@
 ## About me
 
-I'm a software engineer, have been working on web development since 2014. I decided to be a game developer recently, and I'm coding with Unity and C# now. So I will write articles mostly about these tech stacks.
+I am a programmer living in China🇨🇳 who loves coding and writing. I started programming in 2014 and excel in front-end development. I also do Flutter client development, as well as server-side development based on Go and Node. I use Python for various tasks as well. Recently, I've been learning Rust and C#, and I'm particularly interested in frontend toolchains, editor development, and game development.
+
+Enjoy reading!🍻
 
 ## About this blog
 
@@ -16,4 +18,4 @@ The images in this blog are from [Unsplash](https://unsplash.com/), and emojis a
 
 ---
 
-Copyright (c) 2023 ZHENG CHAO - Alrights reserved.
+Copyright (c) 2024 ZHENG CHAO - Alrights reserved.
