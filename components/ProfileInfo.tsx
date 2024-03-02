@@ -43,7 +43,7 @@ export const ProfileCardInfo = () => {
             key={name}
           >
             <div className="mr-1 mt-1">
-              <Svgr width="14" height="14" />
+              <Svgr width="14" height="14" className="dark:bg-dark" />
             </div>
             {name}
           </a>
