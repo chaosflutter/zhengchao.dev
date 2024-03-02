@@ -29,6 +29,7 @@ export function TypedBios() {
           I'm particularly interested in frontend toolchains, editor
           development, and game development.
           <br />
+          <br />
           Enjoy reading!
           <Twemoji emoji="clinking-beer-mugs" />
         </li>

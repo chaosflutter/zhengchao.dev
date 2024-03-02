@@ -10,7 +10,7 @@ import type { PostSimpleLayoutProps } from '~/types'
 
 function PostSimple(props: PostSimpleLayoutProps) {
   const { frontMatter, type, children, authorDetails, commentConfig } = props
-  const { date, title, slug, fileName, topics, readingTime, origin } =
+  const { date, title, slug, fileName, topics, readingTime, origin, gzh } =
     frontMatter
   const postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`
 
@@ -27,27 +27,32 @@ function PostSimple(props: PostSimpleLayoutProps) {
           <header className="py-6 lg:py-10">
             <div className="space-y-4">
               <PageTitle>{title}</PageTitle>
-              <dl>
-                <div>
-                  <dt className="sr-only">Published on</dt>
-                  <BlogMeta date={date} slug={slug} readingTime={readingTime} />
-                  <BlogTopics topics={topics} />
-                  {origin && (
-                    <div className="mt-2 text-gray-500 dark:text-gray-400">
-                      translated from：
-                      <a href={origin} target="_blank">
-                        {origin}
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </dl>
+              <div className="flex justify-between items-end">
+                <BlogMeta date={date} slug={slug} readingTime={readingTime} />
+                {gzh && (
+                  <div className="text-sm mt-2 font-medium text-gray-500 dark:text-gray-400">
+                    首发于公众号:{' '}
+                    <a className="underline" href={gzh} target="_blank">
+                      长期主义乐观派
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </header>
           <div className="pb-8">
             <div className="prose prose-lg pb-8 dark:prose-dark">
               {children}
             </div>
+            {origin && (
+              <div className="mb-2 text-gray-500 dark:text-gray-400">
+                Translated from：
+                <a href={origin} target="_blank">
+                  {origin}
+                </a>
+              </div>
+            )}
+            <BlogTopics topics={topics} />
             <div className="border-t border-gray-200 dark:border-gray-700">
               <SocialButtons
                 postUrl={postUrl}

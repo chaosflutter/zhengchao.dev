@@ -21,6 +21,7 @@ export interface MdxFrontMatter {
   authors?: string[]
   origin?: string
   slug: string
+  gzh?: string
 }
 
 export type ReadingTime = ReturnType<typeof readingTime>

@@ -18,4 +18,4 @@ The images in this blog are from [Unsplash](https://unsplash.com/), and emojis a
 
 ---
 
-Copyright (c) 2024 ZHENG CHAO - Alrights reserved.
+Copyright (c) 2024 CHAD CHENG - Alrights reserved.

@@ -1,11 +1,11 @@
 export const siteMetadata = {
-  title: "Chao's blog - Coding, Writing, Sharing",
-  author: 'Chao',
-  fullName: 'Chao Zheng',
-  headerTitle: "Chao's blog",
-  footerTitle: "Chao's blog - All rights reserved.",
+  title: "Chad's blog - Coding, Writing, Sharing",
+  author: 'Chad',
+  fullName: 'Chad Cheng',
+  headerTitle: 'Chad Cheng',
+  footerTitle: 'Chad Cheng - All rights reserved.',
   description:
-    "Chao's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
+    "Chad's coding journey - work and life stories through the keyboard of an open-minded Software Engineer",
   language: 'en-us',
   siteUrl: 'https://zhengchao.dev',
   siteRepo: 'https://github.com/chaosflutter/zhengchao.dev',
@@ -28,8 +28,8 @@ export const siteMetadata = {
     googleAnalyticsId: 'G-F954ZQPP1J', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
-    github: 'chad cheng',
-    twitter: 'chad cheng',
+    github: 'chaosflutter',
+    twitter: 'chaosflutt28952',
     linkedin: '',
   },
 }
