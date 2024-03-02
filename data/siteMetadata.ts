@@ -45,7 +45,7 @@ export const commentConfig = {
   provider: 'giscus', // 'giscus' | 'utterances' | 'disqus',
   // https://giscus.app/
   giscusConfig: {
-    repo: 'wbirdss/chaosflutter.xyz', // process.env.GISCUS_REPO
+    repo: 'chaosflutter/zhengchao.dev', // process.env.GISCUS_REPO
     repositoryId: 'R_kgDOJMQZHQ', // process.env.GISCUS_REPOSITORY_ID
     category: 'Announcements', // process.env.GISCUS_CATEGORY
     categoryId: 'DIC_kwDOJMQZHc4CXB9l', // process.env.GISCUS_CATEGORY_ID
