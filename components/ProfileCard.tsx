@@ -7,14 +7,14 @@ export function ProfileCard() {
   const [style, setStyle] = useState<React.CSSProperties>({})
 
   const onMouseMove = useCallback((e: MouseEvent) => {
-    if (!ref.current || window.innerWidth < 1280) return
+    if (!ref.current) return
 
     const { clientX, clientY } = e
     const { width, height, x, y } = ref.current.getBoundingClientRect()
     const mouseX = Math.abs(clientX - x)
     const mouseY = Math.abs(clientY - y)
-    const rotateMin = -15
-    const rotateMax = 15
+    const rotateMin = -10
+    const rotateMax = 10
     const rotateRange = rotateMax - rotateMin
 
     const rotate = {

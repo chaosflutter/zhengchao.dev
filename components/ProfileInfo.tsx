@@ -5,7 +5,7 @@ export function ProfileCardInfo() {
   return (
     <div className="hidden py-6 md:block md:px-3">
       <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-        Chaosflutter
+        Chad Cheng
       </h3>
       <h5 className="py-2 text-gray-700 dark:text-gray-400">
         coder | builder | gamer

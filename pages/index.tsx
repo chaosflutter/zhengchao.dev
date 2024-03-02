@@ -9,7 +9,6 @@ import type { BlogFrontMatter } from '~/types'
 export function getStaticProps() {
   const posts = getAllFilesFrontMatter('posts')
 
-  // display featured posts later on
   return { props: { posts } }
 }
 
@@ -20,7 +19,7 @@ export default function Home({ posts }: { posts: BlogFrontMatter[] }) {
         title={siteMetadata.title}
         description={siteMetadata.description}
       />
-      <div className="mt-8 divide-y divide-gray-200 dark:divide-gray-700 md:mt-16">
+      <div className="mt-8 divide-y divide-gray-200 dark:divide-gray-700">
         <div className="my-4 md:grid md:grid-cols-3 md:pt-6 md:pb-8">
           <div className="hidden md:block">
             <ProfileCard />
