@@ -13,10 +13,10 @@ export const siteMetadata = {
   image: '/static/images/profile-square.jpg',
   socialBanner: '/static/images/profile-square.jpg',
   email: 'zhchaozju@gmail.com',
-  github: 'https://github.com/wbirdss',
-  twitter: 'https://twitter.com/zhchaozju',
+  github: 'https://github.com/chaosflutter',
+  twitter: 'https://twitter.com/chaosflutt28952',
   medium: 'https://medium.com/@ivzhangyan',
-  youtube: 'https://www.youtube.com/channel/UCYVxyn6DHeXxYxC75_ty9Ng',
+  youtube: '',
   linkedin: '',
   facebook: '',
   locale: 'en-US',
@@ -28,8 +28,8 @@ export const siteMetadata = {
     googleAnalyticsId: 'G-F954ZQPP1J', // e.g. UA-000000-2 or G-XXXXXXX
   },
   socialAccounts: {
-    github: 'wbirdss',
-    twitter: 'zhchaozju',
+    github: 'chad cheng',
+    twitter: 'chad cheng',
     linkedin: '',
   },
 }
