@@ -1,16 +1,16 @@
-import { BlogMeta } from '~/components/post/BlogMeta'
 import { Comments } from '~/components/comments'
 import { PageTitle } from '~/components/PageTitle'
+import { BlogMeta } from '~/components/post/BlogMeta'
+import { BlogTopics } from '~/components/post/BlogTopics'
 import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { BlogSeo } from '~/components/SEO'
-import { BlogTopics } from '~/components/post/BlogTopics'
 import { SocialButtons } from '~/components/SocialButtons'
 import { siteMetadata } from '~/data/siteMetadata'
 import type { PostSimpleLayoutProps } from '~/types'
 
 function PostSimple(props: PostSimpleLayoutProps) {
   const { frontMatter, type, children, authorDetails, commentConfig } = props
-  const { date, title, slug, fileName, topics, readingTime, origin, gzh } =
+  const { date, title, slug, fileName, topics, readingTime, origin, gzh, jj } =
     frontMatter
   const postUrl = `${siteMetadata.siteUrl}/${type}/${slug}`
 
@@ -31,9 +31,17 @@ function PostSimple(props: PostSimpleLayoutProps) {
                 <BlogMeta date={date} slug={slug} readingTime={readingTime} />
                 {gzh && (
                   <div className="text-sm mt-2 font-medium text-gray-500 dark:text-gray-400">
-                    首发于公众号:{' '}
+                    同步于公众号:{' '}
                     <a className="underline" href={gzh} target="_blank">
                       长期主义乐观派
+                    </a>
+                  </div>
+                )}
+                {jj && (
+                  <div className="text-sm mt-2 font-medium text-gray-500 dark:text-gray-400">
+                    同步于掘金:{' '}
+                    <a className="underline" href={jj} target="_blank">
+                      chaosflutter
                     </a>
                   </div>
                 )}

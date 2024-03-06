@@ -2,9 +2,9 @@ import { PageSeo } from 'components/SEO'
 import { FeaturedPosts } from '~/components/homepage/FeaturedPosts'
 import { TypedBios } from '~/components/homepage/TypedBios'
 import { ProfileCard } from '~/components/ProfileCard'
+import { ScrollTopButton } from '~/components/ScrollTopButton'
 import { siteMetadata } from '~/data/siteMetadata'
 import { getAllFilesFrontMatter } from '~/libs/mdx'
-import { ScrollTopButton } from '~/components/ScrollTopButton'
 import type { BlogFrontMatter } from '~/types'
 
 export function getStaticProps() {

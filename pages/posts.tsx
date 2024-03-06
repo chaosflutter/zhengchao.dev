@@ -1,5 +1,4 @@
 import { PageSeo } from '~/components/SEO'
-import { POSTS_PER_PAGE } from '~/constant'
 import { siteMetadata } from '~/data/siteMetadata'
 import { ListLayout } from '~/layouts/ListLayout'
 import { getAllFilesFrontMatter } from '~/libs/mdx'

@@ -22,6 +22,7 @@ export interface MdxFrontMatter {
   origin?: string
   slug: string
   gzh?: string
+  jj?: string
 }
 
 export type ReadingTime = ReturnType<typeof readingTime>
