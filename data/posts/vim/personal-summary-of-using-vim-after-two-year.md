@@ -2,6 +2,7 @@
 title: '使用 Vim 两年后的个人总结'
 date: '2023-01-03'
 topics: ['vim', 'editor']
+jj: 'https://juejin.cn/post/7263676990736220220'
 ---
 
 ### 为什么要使用 Vim

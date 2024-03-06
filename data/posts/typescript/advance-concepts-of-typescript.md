@@ -2,6 +2,7 @@
 title: '用好 TypeScript，请再深入一些'
 date: '2022-09-09'
 topics: ['typescript']
+jj: 'https://juejin.cn/post/7154194360232312846'
 ---
 
 TypeScript 已经成为前端编程语言的事实标准。但我从大量的 Code Review 和面试经历中发现，真正能深入使用 TypeScript 的开发其实并不多。如果你不知道 `ReturnType<T>` 的作用和实现，或许这篇文章也适合你。
