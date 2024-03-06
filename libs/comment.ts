@@ -1,5 +1,5 @@
-import type { CommentConfigType } from '~/types'
 import { commentConfig as DefaultCommentConfig } from '~/data/siteMetadata'
+import type { CommentConfigType } from '~/types'
 
 // This is a temporary workaround for the fact that the `mdx-bundler` & `esbuild`
 // is not working with the NextJS's public variables.

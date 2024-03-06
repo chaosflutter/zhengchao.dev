@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Typed from 'typed.js'
 import { Twemoji } from '../Twemoji'
 

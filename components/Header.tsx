@@ -3,8 +3,8 @@ import { headerNavLinks } from 'data/headerNavLinks'
 import NextImage from 'next/image'
 import { useRouter } from 'next/router'
 import { Link } from './Link'
-import { ThemeSwitcher } from './ThemeSwitcher'
 import { MenuToggler } from './MenuToggler'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   const router = useRouter()

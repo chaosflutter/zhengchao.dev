@@ -1,9 +1,9 @@
 import { FacebookShareButton, TwitterShareButton } from 'react-share'
-import TwitterIcon from '~/icons/twitter.svg'
-import FacebookIcon from '~/icons/facebook.svg'
 import { siteMetadata } from '~/data/siteMetadata'
-import { Link } from './Link'
+import FacebookIcon from '~/icons/facebook.svg'
+import TwitterIcon from '~/icons/twitter.svg'
 import type { SocialButtonsProps } from '~/types'
+import { Link } from './Link'
 
 export function SocialButtons({
   postUrl,

@@ -1,7 +1,7 @@
-import inquirer from 'inquirer';
-import fs from 'fs';
-import path from 'path';
-import dedent from 'dedent';
+import dedent from 'dedent'
+import fs from 'fs'
+import inquirer from 'inquirer'
+import path from 'path'
 
 const root = process.cwd()
 

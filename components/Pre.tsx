@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'
 import clsx from 'clsx'
+import React, { useRef, useState } from 'react'
 
 export function Pre({ children }: { children: React.ReactNode }) {
   const textInput = useRef(null)

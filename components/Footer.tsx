@@ -1,8 +1,8 @@
 import { siteMetadata } from '~/data/siteMetadata'
-import Twitter from '~/icons/twitter.svg'
 import Github from '~/icons/github.svg'
-import Medium from '~/icons/medium.svg'
 import Mail from '~/icons/mail.svg'
+import Medium from '~/icons/medium.svg'
+import Twitter from '~/icons/twitter.svg'
 
 const socialMediums = [
   {

@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import { headerNavLinks } from '~/data/headerNavLinks'
 import { Link } from './Link'
-import clsx from 'clsx'
 
 export function MobileNav({ navShow, onToggleNav }) {
   const className = clsx(

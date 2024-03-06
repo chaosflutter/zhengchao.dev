@@ -1,6 +1,6 @@
-import { visit } from 'unist-util-visit'
 import { slug } from 'github-slugger'
 import { toString } from 'mdast-util-to-string'
+import { visit } from 'unist-util-visit'
 import type {
   RemarkTocHeadingOptions,
   UnistNodeType,
