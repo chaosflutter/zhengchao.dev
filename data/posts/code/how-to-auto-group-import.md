@@ -2,6 +2,7 @@
 title: '如何自动分组排序 import 语句'
 date: '2024-03-06'
 topics: ['clean-code', 'format']
+jj: 'https://juejin.cn/post/7343278605156777999'
 ---
 
 今天分享一个代码整理的小技巧：自动分组排序 import 语句。
@@ -14,7 +15,7 @@ go 或者类似自带 formt 工具的语言，通常会体贴地帮你自动整�
 
 可以使用：`prettier-plugin-organize-imports`
 
-> 项目地址：https://github.com/simonhaenisch/prettier-plugin-organize-imports
+> 项目地址：<https://github.com/simonhaenisch/prettier-plugin-organize-imports>
 
 安装：
 
@@ -38,7 +39,7 @@ pnpm add prettier-plugin-organize-imports -D
 
 可以使用：`eslint-plugin-simple-import-sort`
 
-> 项目地址：https://github.com/lydell/eslint-plugin-simple-import-sort
+> 项目地址：<https://github.com/lydell/eslint-plugin-simple-import-sort>
 
 安装：
 
