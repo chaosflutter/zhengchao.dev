@@ -1,10 +1,10 @@
 ---
-title: '盘点最近 React 项目中用到的一些非常好用的三方库：动画库、图标库、组件库等'
+title: '盘点最近 React 项目中用到的一些非常好用的库：动画库、组件库、Hook库等'
 date: '2024-04-02'
 topics: ['react']
 ---
 
-最近开发了自己的第一款独立产品，一个基于 Next.js 开发的 WebApp。项目中用到了一些非常好用的三方库，在这里做一个盘点，或许你的下一个项目也可以用到。
+最近完成了自己的第一款产品，一个基于 next.js 开发的 web app。项目中用到了一些非常好用的三方库，在这里做一个盘点，或许你的下一个项目也可以用到。
 
 
 ### shadcn/ui 组件库
@@ -14,26 +14,26 @@ topics: ['react']
 
 基于 [bestofjs](https://bestofjs.org/) 上的数据，应该是近年来前端最热门的组件库。 
 
-// lib-1.png
+![lib-1](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-1.png)
 
-我实际体验下来，感觉真的不错。我的感受是，它和之前的许多组件库，比如 ant-design、mantine 等等最大的区别在于高度的可定制化。传统的组件库一般是封装好以后暴露出 props 接口，使用者只能受限于这些暴露的 api，如果业务中有一些定制化的诉求，可能需要做一些不太优雅的 trick，甚至有些业务特定功能根本无法基于这些开源的组件库实现，这也是许多稍微有实力的公司喜欢自己做组件库的原因之一。
+我实际体验下来，感觉真的不错。我的感受是，它和之前的许多组件库，比如 ant-design、mantine 等等最大的区别在于高度的可定制化。传统的组件库一般是封装好以后暴露出 props 接口，使用者只能受限于这些暴露的 api，**如果业务中有一些定制化的需求，可能需要做一些不太优雅的 trick，甚至有些业务特定功能根本无法基于这些开源的组件库实现，这也是许多稍微有实力的公司喜欢自己做组件库的原因之一。**
 
-但 `shadcn/ui` 不一样，你可以直接通过 cli 工具下载它包含的某个组件到本地目录，然后在本地你可以对组件源码进行修改。它底层依赖的是 [radix](https://www.radix-ui.com/) 组件库，实际也没办法做到百分百可定制性，但确实要比其他组件库灵活太多了。并且，`shadcn/ui` 基于 `tailwind.css` 样式方案，调整组件样式非常方便。组件的默认样式、交互做得都挺精致的，用户体验很好。总之，它的开发体验和用户体验做得都不错，也难怪如此热门，建议还没尝试的同学下一个项目可以考虑用一用 `shadcn/ui`。
+但 `shadcn/ui` 不一样，你可以直接通过 cli 工具下载它包含的某个组件到本地目录，然后你可以在本地对组件源码进行修改。它底层依赖的是 [radix](https://www.radix-ui.com/) 组件库，实际也没办法做到百分百可定制性，但确实要比其他组件库灵活太多了。并且，`shadcn/ui` 基于 `tailwind.css` 样式方案，调整组件样式非常方便。组件的默认样式、交互做得都挺精致的，用户体验很好。总之，它的开发体验和用户体验做得都不错，也难怪如此热门，建议还没尝试过的同学下一个项目可以考虑用一用 `shadcn/ui`。
 
 
 ### lucide-react 图标库
 
 - 官网地址：https://lucide.dev/guide/packages/lucide-react
-- 该图标库库截至目前已经在 [Github](https://github.com/lucide-icons/lucide) 上收获了 8.3k 的 star
+- 该图标库截至目前已经在 [Github](https://github.com/lucide-icons/lucide) 上收获了 8.3k 的 star
 
 这是 `shadcn/ui` 推荐使用的图标库，配合它的网站查找和使用图标非常方便：
 
-// lib-2.png
+![lib-2](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-2.png)
 
 如上图所示，它支持修改图标的颜色，stroke 宽度，尺寸等等。也支持各种前端框架，支持下载 svg、png 文件，或复制 base64 格式的 data url。
 
 
-// lib-3.png
+![lib-3](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-3.png)
 
 非常推荐一用。我之前用过的类似的图标库还有 [tabler](https://tabler.io/icons) 等，也可以试试。
 
@@ -43,16 +43,16 @@ topics: ['react']
 - 官网地址：https://www.react-spring.dev/docs
 - 该动画库截至目前已经在 [Github](https://github.com/pmndrs/react-spring) 上收获了 27.3k 的 star
 
-这是 react 开发生态中最热门的动画库之一，也是 react 开发者想要实现复杂、优雅动画的最强武器之一。和大家熟悉的基于贝塞尔曲线的动画不一样，它是 spring 动画，通过 `mass`、`frication`、`tension`（质量、摩擦、张力）等参数来模拟现实的物理动画效果，动画要更逼真。下面的视频，是我产品中的一个功能，通过纸牌卡片的方式复习记录的生词，就是用 `react-spring` 实现的，效果如下：
+这是 react 开发生态中最热门的动画库之一，也是 react 开发者想要实现复杂、优雅动画的最强武器之一。和大家熟悉的基于贝塞尔曲线的动画不一样，它是 spring 动画，通过 `mass`、`frication`、`tension`（质量、摩擦、张力）等参数来模拟现实的物理动画效果，动画更有真实感。下面的视频，是我产品中的一个功能，通过纸牌卡片的方式复习阅读中记录的生词，我就是用 `react-spring` 实现的，效果如下：
 
 <video width="100%" controls>
     <source src="https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/video/idea-3.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
 </video>
 
-`react-string` 上手也很简单，官方提供了很多例子，可以直接看例子代码来学习和使用，比如这个 [codesanbox 上的例子](https://codesandbox.io/s/exkei)。
+`react-string` 上手也很简单，官方提供了很多例子，可以直接看例子的代码来学习和使用，比如这个 [codesandbox 上的例子](https://codesandbox.io/s/exkei)。
 
-产品有优雅的动画，就像一个人有了灵气，产品会变得鲜活和灵动，用户体验和感受会好很多。建议还没用过的同学，下一个项目可以试一试。
+**产品有优雅的动画，就像一个人有了灵气，会变得鲜活和灵动，用户体验和感受会好很多。建议还没用过的同学，下一个项目可以试一试。**
 
 ### mark.js 高亮网页中的文本
 
@@ -73,18 +73,18 @@ topics: ['react']
 - storybook 地址：https://grubersjoe.github.io/react-activity-calendar/?path=/docs/react-activity-calendar--docs
 - 该项目截至目前已经在 [Github](https://github.com/grubersjoe/react-activity-calendar) 上收获了 239 的 star
 
-因为项目中要现实用户在网页阅读中记录生词的轨迹，所以用到了这个组件，效果如下：
+因为项目中要展示用户在网页阅读中记录生词的轨迹，所以用到了这个组件，效果如下：
 
 ![单词统计](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/idea-statistics.png)
 
-虽然只有 200 多的 star，但这个库质量挺高的，至少我在项目中使用完全没有遇到问题，api 设计也合理，应该能满足类似功能的绝大多数需求。如果你的项目中可能就会用到，建议收藏下。
+虽然只有 200 多的 star，但这个库质量挺高的，至少我在项目中使用完全没有遇到问题，api 设计也合理，应该能满足类似功能的绝大多数需求。如果你的项目中可能会用到，建议收藏。
 
 ### react-hotkeys-hook 绑定快捷键的 hook
 
 - 官网地址：https://react-hotkeys-hook.vercel.app
 - 该项目截至目前已经在 [Github](https://github.com/JohannesKlauss/react-hotkeys-hook) 上收获了 2.4k 的 star
 
-如果产品中包含了很多的交互，如果像提高用户体验，提供一些必要的快捷键是非常好的选择。我们可以自己在 useEffect 里去绑定一些快捷键事件，但类似这样的基础功能确实不太有必要自己造轮子，不需要自己考虑各种边界和性能问题，使稳定成熟好用的三方库可能是更好的选择。`react-hotkeys-hook` 就是这样一个库，使用很简单，示例代码如下：
+如果产品中包含了很多的交互，提供一些必要的快捷键是非常好的提高用户体验的手段。虽然我们自己可以在 useEffect 里去绑定一些快捷键事件，但类似这样的基础能力确实不太有必要自己造轮子，使用稳定成熟好用的三方库可能是更好的选择，不需要自己考虑各种边界和性能问题。`react-hotkeys-hook` 就是这样一个库，使用很简单，示例代码如下：
 
 ```jsx
 import { useHotkeys } from 'react-hotkeys-hook'
@@ -101,14 +101,16 @@ export const ExampleComponent = () => {
 }
 ```
 
-以上是我在最近 react 项目中用到的感觉非常好用的一些三方库，当然除了这些还有更多的库，可能很多大家都比较熟悉，所以不再一一详细枚举，包括：
+### 还有更多
+
+以上是我最近 react 项目中用到的感觉非常好用的一些三方库，当然除了这些还用了其他的库，可能很多大家都比较熟悉，所以不再一一详细列举，包括：
 
 - 请求库 `swr`
 - 状态管理库  `zustand`
 - 懒加载库 `react-lazy`
 - 撒花特效库 `canvas-confetti`
 - 图表库 `chart.js`
-- 时间处理 `date-fns`
+- 时间处理库 `date-fns`
 - tooltip 库 `react-tooltip`
 - 打字动效库 `typed.js` 
 
