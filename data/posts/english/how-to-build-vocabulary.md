@@ -2,7 +2,7 @@
 title: '如何有效提升词汇量'
 date: '2024-03-31'
 topics: ['english', 'product']
-gzh: 'https://mp.weixin.qq.com/s/1jOhOz_hXnNp5uk8tc3Feg'
+jj: 'https://juejin.cn/post/7352751855333900322'
 ---
 
 

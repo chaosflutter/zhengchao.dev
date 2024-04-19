@@ -2,6 +2,7 @@
 title: '如何一个月内显著提升英文阅读能力'
 date: '2024-04-04'
 topics: ['english', 'product']
+jj: 'https://juejin.cn/post/7354019135992938536'
 ---
 
 如果你太忙，没办法读完全文，那么只需要记住这三个步骤：
@@ -42,7 +43,7 @@ topics: ['english', 'product']
 
 除了单词，这款工具也会记录关联的句子，如果没有这个关联的句子，坦白讲我也很难理解 `lag` 这个词怎么用。关联的句子就来自于我阅读过的这篇文章：
 
->  While traditionally seen as lagging behind their proprietary counterparts in terms of accuracy and performance, the gap is closing.
+> While traditionally seen as lagging behind their proprietary counterparts in terms of accuracy and performance, the gap is closing.
 
 它的意译是：
 
@@ -65,7 +66,6 @@ topics: ['english', 'product']
 <div style={{display: "flex", justifyContent: "center", paddingBottom: "20px"}}>
   <img src="https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/how-to-imporve-reading-in-one-month/minp-review.png" width="420px" />
 </div>
-
 
 ### 最后的话
 
