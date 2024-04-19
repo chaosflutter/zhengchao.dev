@@ -25,7 +25,7 @@ jj: 'https://juejin.cn/post/7357172505961480207'
 
 ### Medium
 
-地址：<https://medium.com>
+地址：[https://medium.com](https://medium.com)
 
 Medium 可能是国外最大最好的的写作和阅读平台之一。上面有各个领域的作者，我自己经常看的是技术、个人发展、创业相关领域的文章。它的文章排版非常简约美观，作为阅读平台的社区氛围也很不错。**不过有些文章是会员专属的，会员一个月 5 美元，如果你每个月会读很多篇，那我觉得其实也还好，你读到的内容价值肯定远远超过 5 美元。**
 
@@ -33,7 +33,7 @@ Medium 可能是国外最大最好的的写作和阅读平台之一。上面有�
 
 ### Hacker News
 
-地址：<https://news.ycombinator.com/news>
+地址：[https://news.ycombinator.com/news](https://news.ycombinator.com/news)
 
 Hacker News 是由 Y Combinator 创建的文章聚合网站，榜单上的文章偏技术、创业主题。我觉得它比较好的是用户投票机制，用户可以对提交的文章进行投票，高票的文章一般会排在前面，所以通常文章质量都还不错。
 
@@ -41,7 +41,7 @@ Hacker News 是由 Y Combinator 创建的文章聚合网站，榜单上的文章
 
 ### Dev.to
 
-地址：<https://dev.to>
+地址：[https://dev.to](https://dev.to)
 
 你可以把它理解为“国外的掘金”， 是一个技术社区，上面有大量不错的技术文章，我经常把它当成一个搜索引擎，对什么技术感兴趣想了解，会去搜索相关的内容。我喜欢它的 “Top” 排行榜功能，可以按周、月、年等阅读最热门的一些技术文章。
 
@@ -49,7 +49,7 @@ Hacker News 是由 Y Combinator 创建的文章聚合网站，榜单上的文章
 
 ### Indie Hackers
 
-地址：<https://www.indiehackers.com/>
+地址：[https://www.indiehackers.com/](https://www.indiehackers.com/)
 
 Indie Hackers 是非常有名的独立开发者社区，会有很多独立开发者、小的创业团队成员在上面分享自己的经验和观点。如果你想尝试独立开发或创业，可以多逛逛这个网站，可能会学到一些好的经验。我自己几乎每天会看 1-2 篇文章，上面的文章一般都不太长，也容易阅读。
 
