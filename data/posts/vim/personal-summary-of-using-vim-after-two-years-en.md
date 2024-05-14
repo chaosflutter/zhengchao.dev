@@ -18,7 +18,7 @@ Of course, when you truly enjoy using Vim, you'll have a new understanding. For 
 
 ### The best metaphor for the “Normal mode” comes from the book "Practical Vim."
 
-The book "Code Complete" begins with the **metaphor** of software construction, which is an excellent way to establish correct mental models through familiar concepts. Regarding why Vim needs a Normal mode, the best metaphor I've encountered comes from the book "Practical Vim". Here are a few key passages I've excerpted:
+Regarding why Vim needs a Normal mode, the best metaphor I've encountered comes from the book "Practical Vim". Here are a few key passages I've excerpted:
 
 > Think of all of the things that painters do besides paint. They study their subject, adjust the lighting, and mix paints into new hues. And when it comes to applying paint to the canvas, who says they have to use brushes? A painter might switch to a palette knife to achieve a different texture or use a cotton swab to touch up the paint that's already been applied.
 
