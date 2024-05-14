@@ -15,7 +15,7 @@ export const siteMetadata = {
   email: 'zhchaozju@gmail.com',
   github: 'https://github.com/chaosflutter',
   twitter: 'https://twitter.com/chaosflutt28952',
-  medium: 'https://medium.com/@ivzhangyan',
+  medium: 'https://medium.com/@chaosflutter',
   youtube: '',
   linkedin: '',
   facebook: '',
