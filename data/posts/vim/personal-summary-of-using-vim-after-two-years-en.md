@@ -6,7 +6,7 @@ topics: ['vim', 'editor']
 
 ### Why use Vim
 
-The motivation to learn is crucial. Just because many expert programmers use Vim doesn't mean you should learn it with that mindset. If you approach it this way, you're likely to give up after a few attempts, as I once did. Vim has a steep learning curve, and without a strong motivation to learn, it's hard to stick with it.
+The motivation to learn is crucial. Just because many expert programmers use Vim doesn't mean you should learn it. If you approach it this way, you're likely to give up after a few attempts, as I once did. Vim has a steep learning curve, and without a strong motivation to learn, it's hard to stick with it.
 
 So why did I start learning Vim again and eventually become accustomed to, even fond of, and dependent on Vim after over two years? The reason is simple: I had to master Vim.
 
