@@ -64,7 +64,7 @@ export default function Blog(props: BlogProps) {
           layout={frontMatter.layout || DEFAULT_LAYOUT}
           mdxSource={mdxSource}
           frontMatter={frontMatter}
-          type="blog"
+          type="post"
           {...rest}
         />
       ) : (
