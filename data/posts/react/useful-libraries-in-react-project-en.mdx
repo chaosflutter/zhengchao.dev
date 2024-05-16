@@ -1,0 +1,96 @@
+---
+title: 'Some highly useful React libraries recently used in my project'
+date: '2024-05-16'
+topics: ['react']
+---
+
+Recently, I released my first product, a web app developed with Next.js. I used some incredibly useful third-party libraries in the project. Here's a rundown; perhaps they'll be handy for your next project too.
+
+### Shadcn/ui
+
+- https://ui.shadcn.com
+
+Based on data from bestofjs, it should be one of the hottest component libraries in the frontend in recent years. 
+
+![lib-1](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-1.png)
+
+From my actual experience, I feel it's really good. My impression is that its biggest difference from many previous component libraries, such as Ant Design and Mantine, lies in its high level of customizability. Traditional component libraries generally expose props interfaces after encapsulation, and users are limited to these exposed APIs. **If there are some customized requirements in the business, it may be necessary to implement some less elegant tricks, or even some business-specific features cannot be implemented based on these open-source component libraries. This is also one of the reasons why many companies prefer to develop their own component libraries.**
+
+But `shadcn/ui` is different. You can directly download a specific component from it to your local directory using a CLI tool, and then you can modify the component source code locally. It relies on the [radix](https://www.radix-ui.com/) component library at the underlying level, so it's not possible to achieve 100% customizability, but it is indeed much more flexible than other component libraries. Moreover, `shadcn/ui` is based on the `tailwind.css` styling approach, making it very convenient to adjust component styles. The default styles and interactions of the components are quite refined. Overall, its development experience and user experience are both good, so it's no wonder it's so popular. I suggest those who haven't tried it yet to consider using `shadcn/ui` for their next project.
+
+### lucide-react
+
+- https://lucide.dev/guide/packages/lucide-react
+
+This is the icon library recommended for shadcn/ui. It's very convenient to search for and use icons with its website.
+
+![lib-2](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-2.png)
+
+As shown above, it supports modifying icon colors, stroke width, size, and more. It also supports various frontend frameworks, allowing you to download SVG, PNG files, or copy base64-encoded data URLs.
+
+
+![lib-3](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/blog/useful-libs/lib-3.png)
+
+Highly recommended. Other similar icon libraries I've used before include [tabler](https://tabler.io/icons), which you can also give a try.
+
+
+### react-string
+
+- https://www.react-spring.dev/docs
+
+This is one of the most popular animation libraries in the React development ecosystem, and it's also one of the strongest weapons for React developers to achieve complex and elegant animations. Unlike the familiar animations based on Bezier curves, it uses spring animations, simulating real-world physical animation effects through parameters such as `mass`, `friction`, `tension`, making the animations more realistic.
+
+
+Getting started with `react-string` is also very simple. The official documentation provides many examples that you can directly refer to for learning and usage. For example, check out this example on [CodeSandbox](https://codesandbox.io/s/exkei).
+
+**Having elegant animations in a product is like giving a person charisma; it becomes lively and dynamic, greatly enhancing the user experience. If you haven't tried it yet, I suggest giving it a shot in your next project.**
+
+### mark.js
+
+- https://markjs.io
+
+My project also includes a Chrome extension that needs to automatically underline a word when the user double-clicks on it.
+
+Because of the need for underlining, I found this library. From my experience, I didn't encounter any major issues, and the API is very simple and easy to use. If your project requires similar text highlighting (underlining) on web pages, you might want to give it a try.
+
+### react-activity-calendar 
+
+- https://grubersjoe.github.io/react-activity-calendar/?path=/docs/react-activity-calendar--docs
+
+A screenshot of `react-activity-calendar`:
+
+![单词统计](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/idea-statistics.png)
+
+Although it has only a little over 200 stars on github, the quality of this library is quite high. At least in my project, I encountered no issues, and the API design is reasonable. It should meet the majority of similar functional requirements. 
+
+### react-hotkeys-hook 
+
+- https://react-hotkeys-hook.vercel.app
+
+If your product includes a lot of interactions, providing some essential shortcuts is a great way to improve user experience. While we can bind some shortcut events in `useEffect`, it's not necessary to reinvent the wheel for such basic functionality. Using a stable, mature, and useful third-party library might be a better choice, as you won't need to worry about various edge cases and performance issues. `react-hotkeys-hook` is such a library, and it's very easy to use. Here is a sample code:
+
+```javascript
+import { useHotkeys } from 'react-hotkeys-hook';
+
+const MyComponent = () => {
+  useHotkeys('ctrl+k', () => {
+    console.log('Pressed ctrl+k');
+  });
+
+  return <div>Press ctrl+k to trigger an action</div>;
+};
+```
+
+### Here’s more
+
+The above are some of the third-party libraries I've recently found very useful in my React project. Of course, I also used other libraries that many of you might already be familiar with, so I won't list each one in detail. These include:
+
+- Request library: SWR
+- State management library: Zustand
+- Lazy loading library: React-Lazy
+- Confetti effect library: Canvas-Confetti
+- Chart library: Chart.js
+- Date handling library: Date-Fns
+- Tooltip library: React-Tooltip
+- Typing effect library: Typed.js
+
