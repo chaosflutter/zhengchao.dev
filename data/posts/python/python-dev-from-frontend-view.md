@@ -6,7 +6,7 @@ topics: ['python']
 
 ## 为什么需要用 Python 开发
 
-前段时间上线了自己的第一款产品 [Siphon 吸词](https://siphon.ink)，帮助英语学习者高效地通过阅读积累词汇量，进而提升英文阅读能力。产品有一个特色功能，用户在网页阅读中遇到生词双击就可以记录到生词本中，**同时也会自动记录生词所在的句子，帮助用户理解生词如何使用**。很多用户反馈，复习的时候，希望关联的句子能有翻译。
+前段时间上线了自己的第一款产品 [Siphon 吸词](https://siphon.ink)，帮助英语学习者高效地通过阅读积累词汇量。产品中有一个特色功能，用户在网页阅读中遇到生词双击就可以记录到生词本中，**同时也会自动记录生词所在的句子，帮助用户理解生词如何使用**。然后很多用户反馈，复习的时候，希望关联的句子能有翻译。
 
 所以，我去做了调研，最后对比发现字节豆包大模型的翻译质量和速度都非常不错，并且价格也有优势。所以选择调用字节豆包大模型的 API 来翻译关联句子。效果如下所示：
 
@@ -14,9 +14,9 @@ topics: ['python']
 
 翻译真的挑不出毛病，英文原文中并没有提到 `Her` 是一部电影，但大模型知道 `Her` 是一部叫《她》的电影。
 
-**不过豆包大模型目前只提供了 Python 的 SDK，我相对擅长的 JavaScript、Go 都没有官方的 SDK。同时自己也想在这个大模型时代，重新捡起 Python 这门语言，所以决定翻译 API 基于 Python 实现。**
+**不过豆包大模型目前只提供了 Python 的 SDK，我相对擅长的 JavaScript、Go 都没有官方的 SDK。同时自己也想在这个大模型时代，重新捡起 Python 这门语言，所以决定关联句子翻译的 API 基于 Python 实现。**
 
-PS：自己很多年前有系统学习过 Python，用 Python 写过简单的自动化交易程序。所以重新上手 Python 项目开发，配合 Copilot 能力，语言层面基本没有什么问题，我遇到的其实还是工程方面的问题。
+PS：自己很多年前有系统学习过 Python，用 Python 写过简单的自动化交易程序。所以重新上手 Python 项目开发，配合 Copilot 能力，语言层面基本没有什么问题，**我遇到的其实还是工程方面的问题。**
 
 ## 使用哪个 Web 开发框架
 
@@ -41,8 +41,6 @@ def read_root():
     return {"Hello": "World"}
 ```
 
-上手真的很简单。
-
 ## Python 中的“虚拟环境”
 
 作为初生牛犊，我虽然知道 Python 的虚拟环境，但自己一开始并没有在意，直到遇到了问题。
@@ -61,12 +59,13 @@ def read_root():
 
 Python 中创建虚拟环境的方式非常多，比如：
 
-- `venv`：适用于大多数 Python 3 用户，内置且简单。
-- `virtualenv`：适用于需要兼容 Python 2 和 Python 3 的用户。
-- `pipenv`：适用于需要集成包管理和虚拟环境管理的用户，推荐用于开发项目。
-- `conda`：适用于数据科学和多语言项目，提供了强大的包管理和环境管理功能。
+- `venv`
+- `virtualenv`
+- `pipenv`
+- `conda`
+- `poetry`
 
-具体如何使用这些工具可以查看文档，或者咨询 ChatGPT。我阅读了下面这些文章后选择了 `poetry`：
+具体如何使用这些工具可以查看文档，或者咨询 ChatGPT。我在阅读了下面这些文章后选择了 `poetry`：
 
 - [5 Reasons Why Poetry Beats Pip Python Setup](https://betterprogramming.pub/5-reasons-why-poetry-beats-pip-python-setup-6f6bd3488a04)
 - [I move from pipenv to poetry in 2023 - Am I right ?](https://dev.to/farcellier/i-migrate-to-poetry-in-2023-am-i-right--115)
@@ -74,7 +73,7 @@ Python 中创建虚拟环境的方式非常多，比如：
 
 至于具体为什么，就是下面要说的“包管理”的问题。
 
-### 有没有类似 Npm 一样的包管理工具
+## 有没有类似 NPM 一样的包管理工具
 
 有，而且不止一个。比如官方推荐的 `pipenv`，它结合了 pip 和 virtualenv 的功能，可以创建虚拟环境，也能安装依赖，并且可以生成类似`package-lock.json` 文件的 `Pipfile.lock`，可以锁依赖的版本。我自己实际用了一下，感觉挺好用的。
 
@@ -85,7 +84,7 @@ Python 中创建虚拟环境的方式非常多，比如：
 - Poetry 的依赖解析和安装性能通常比 Pipenv 更快。
 - 近年来，Poetry 得到了更多的关注和采用。
 
-坦白说，我自己目前还没能体验出 `poetry` 明显的优势，但既然很多人推荐使用这个更现代化的工具，所以自己最后选择了 `poetry`。
+**坦白说，我自己目前还没能体验出 `poetry` 明显的优势，但既然很多人推荐使用这个更现代化的工具，所以自己最后选择了 `poetry`。**
 
 以下是 `poetry` 的一些命令：
 
@@ -100,18 +99,18 @@ poetry shell
 poetry add package_name
 ```
 
-### 如何基于 Docker 部署 Python 项目
+## 如何基于 Docker 部署 Python 项目
 
-和其他语言类似，Dockerfile 中大致的流程如下：
+和 JavaScript 类似，Python 项目的 Dockerfile 大致的流程如下：
 
 - 首先都需要有基础的镜像
-- 然后 `Copy` 包管理的 `lock` 文件，安装依赖
+- 然后 `Copy` 包管理的 `lock` 文件等，安装依赖
 - 然后 `Copy` 必要的项目文件
 - 最后通过 `uvicorn` 来启动服务。
 
-其实很简单，你甚至可以让 ChatGPT 帮你写一个 Dockerfile。我遇到的问题是，我发现最后 build 出的镜像居然有 1.2G（我喜欢用的 Web 开发语言 Go，镜像一般只有几十M）。
+其实很简单，你甚至可以让 ChatGPT 帮你写一个 Dockerfile。**我遇到的问题是，我发现最后 build 出的镜像居然有 1.2G（我喜欢用的 Web 开发语言 Go，镜像一般只有几十M）。**
 
-我最后参考了这篇 Medium 上的文章：[How to make your Python Docker images secure, fast & small](https://medium.com/vantageai/how-to-make-your-python-docker-images-secure-fast-small-b3a6870373a0) 对镜像尺寸做了优化，最后降到了 600多M。如果你有兴趣，推荐读一读这篇文章。这里做个小广告，如果你觉得自己的英文阅读能力需要提高，或许可以试试我开发的这款产品 [Siphon 吸词](https://siphon.ink)，我自己实际使用了两个多月，词汇量和阅读能力提升明显。
+我最后参考了这篇 Medium 上的文章：[How to make your Python Docker images secure, fast & small](https://medium.com/vantageai/how-to-make-your-python-docker-images-secure-fast-small-b3a6870373a0) 对镜像尺寸做了优化，最后降到了 600多M。如果你有兴趣，推荐读一读这篇文章。这里做个小广告，如果你觉得自己的英文阅读能力需要提高，或许可以试试我开发的这款产品 [Siphon 吸词](https://siphon.ink)，我自己实际使用了两个多月，词汇量和阅读能力有明显提升。
 
 最后的 Dockerfile 文件大致如下：
 
@@ -174,4 +173,4 @@ USER appuser
 - [我如何在一个月内显著提升英文阅读能力](https://juejin.cn/post/7354019135992938536)
 - [读完《人人都能用英语》，我开发了一款产品有效积累词汇量](https://juejin.cn/post/7352751855333900322)
 
-如果对我感兴趣，也可以加我微信 `xc_siphon`沟通，谢谢。
+也可以加我微信 `xc_siphon`沟通，谢谢。
