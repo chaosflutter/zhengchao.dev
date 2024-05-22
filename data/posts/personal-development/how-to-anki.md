@@ -27,11 +27,11 @@ topics: ['product']
 
 ### 二、导出 Anki 文件
 
-访问 [https://siphon.ink](https://siphon.ink)，可以看到所有记录的生词，如下所示：
+访问 [https://siphon.ink](https://siphon.ink)，可以看到记录的所有生词，如下所示：
 
 ![单词](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/idea-statistics.png)
 
-点击右上角的头像图标，在下拉菜单中点击“导出 Anki 文件”：
+然后点击右上角的头像图标，在下拉菜单中点击“导出 Anki 文件”：
 
 ![导出 Anki 文件](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/help/export_anki.png)
 
@@ -51,4 +51,4 @@ topics: ['product']
 ![在 Anki 中复习](https://blog-1258648987.cos.ap-shanghai.myqcloud.com/siphon/help/review_in_anki.png)
 
 
-推荐有需要的同学试一试，如果有任何想法或建议可以加我微信 `xc_siphon` 沟通，谢谢。
+**声明：“导出 Anki 文件”是付费会员功能，建议有需要的同学先试试再考虑是否开通会员。** 如果你有任何想法或建议可以加我微信 `xc_siphon` 沟通，谢谢。
