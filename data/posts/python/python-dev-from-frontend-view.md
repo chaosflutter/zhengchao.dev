@@ -2,6 +2,7 @@
 title: 前端程序员上手 Python 项目开发，分享一些收获
 date: '2024-05-18'
 topics: ['python']
+jj: "https://juejin.cn/post/7370099013922422823"
 ---
 
 ## 为什么需要用 Python 开发

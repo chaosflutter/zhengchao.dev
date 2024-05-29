@@ -37,7 +37,6 @@ topics: ['product']
 
 点击后，会导出一个 `txt` 格式的 Anki 文件，文件内包含了你所有在线阅读中通过“Siphon 吸词”插件记录的生词。
 
-
 ### 导入到 Anki 中
 
 导出的文件包含四个 column：Front、Back、Sentence、Origin，分别表示单词、释义、关联句子以及来源地址，你可以根据自己的需要映射到 Anki Fields。

@@ -41,3 +41,4 @@ yarn-error.log*
 .npmrc
 
 tsconfig.tsbuildinfo
+data/posts/vim/notes-of-practical-vim.md
